@@ -2,6 +2,7 @@
 
 
 <% @comments.each do |comment| %>
+<%= image_tag comment.user.avatar.url(:thumb) %>
     <h3><%= comment.user.name %></h3>
     <p><%= comment.content %></p>
       <% if current_user == comment.user %>

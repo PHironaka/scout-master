@@ -1,2 +1,46 @@
 <h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+
+
+
+<%= form_for @user, :html => {class: 'new_user form-horizontal', multipart: true } do |f| %>
+    <fieldset>
+        <div class="form-group">
+            <%= f.label :name, 'Name*', class: 'col-md-4 control-label' %>
+            <div class="col-md-5">
+                <%= f.text_field :name, class: 'form-control' %>
+            </div>
+        </div>
+        <div class="form-group">
+            <%= f.label :email, 'Email*', class: 'col-md-4 control-label' %>
+            <div class="col-md-5">
+                <%= f.text_field :email, class: 'form-control' %>
+            </div>
+        </div>
+        <div class="form-group">
+            <%= f.label :password, 'Password*', class: 'col-md-4 control-label' %>
+            <div class="col-md-5">
+                <%= f.password_field :password, class: 'form-control' %>
+            </div>
+        </div>
+        <div class="form-group">
+            <%= f.label :password_confirmation, 'Confirm Password*', class: 'col-md-4 control-label' %>
+            <div class="col-md-5">
+                <%= f.password_field :password_confirmation, class: 'form-control' %>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <%= f.label :avatar, 'Profile Pic*', class: 'col-md-4 control-label' %>
+            <div class="col-md-5">
+                  <%= f.file_field :avatar, class: 'form-control' %>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-md-8 col-md-offset-4">
+                <%= f.submit 'Edit Account', class: 'btn btn-success' %>
+            </div>
+        </div>
+    </fieldset>
+<% end %>
