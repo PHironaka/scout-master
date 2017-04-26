@@ -1,5 +1,14 @@
 <h1>locations#index</h1>
+
+<%= form_tag locations_path, method: :get do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", name: nil %>
+  </p>
+<% end %>
+
 <% @locations.each do |p| %>
+
 <h2><%= link_to p.title, location_path(p.id) %> </h2>
 <%= image_tag p.image.url(:medium) %>
 <p> Written by <%= link_to p.user.name, user_path(p.user) %></p>

@@ -1,7 +1,7 @@
 <h2><%= pluralize(@comments.count, "Comment") %></h2>
 
 
-<%= @comments.each do |comment| %>
+<% @comments.each do |comment| %>
     <h3><%= comment.user.name %></h3>
     <p><%= comment.content %></p>
       <% if current_user == comment.user %>

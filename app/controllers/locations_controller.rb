@@ -4,7 +4,11 @@ class LocationsController < ApplicationController
   before_action :authorize, except: [:index, :show]
 
   def index
-    @locations = Location.all.order("created_at DESC")
+    if params[:search]
+      @locations = Location.search(params[:search])
+    else
+      @locations = Location.all.order("created_at DESC")
+    end
   end
 
   def show

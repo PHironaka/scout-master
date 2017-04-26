@@ -9,10 +9,12 @@
   </head>
 
     <body>
-      <%= render 'layouts/header' %>
+      <%= render 'partials/navbar' %>
       <div class="container">
-        <% flash.each do |message_type, message| %>
-        <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+        <% if flash[:alert] %>
+          <div class="alert alert-danger">
+            <%= flash[:alert] %>
+          </div>
         <% end %>
         <%= yield %>
         <%= render 'layouts/footer' %>
