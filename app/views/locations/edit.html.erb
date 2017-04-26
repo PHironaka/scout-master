@@ -1,0 +1,9 @@
+
+<h1>Edit Location</h1>
+
+
+<%= form_for @location do |f| %>
+  <%= f.text_field :title, placeholder: 'Feeling' %>
+  <%= f.text_field :body, placeholder: 'Body' %>
+  <%= f.submit  %>
+<% end %>

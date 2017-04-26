@@ -27,6 +27,16 @@ Rails.application.configure do
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
+  # Paperclip::Attachment.default_options.merge!({
+  # storage: :s3 ,
+  # s3_credentials: {
+  #   access_key_id:  ENV['key_id'],
+  #   secret_access_key:  ENV['key'],
+  #     bucket:  "#{ENV['bucket']}-#{Rails.env}"
+  #     },
+  #     url: ":s3_domain_url",
+  #    path: "/:class/:attachment/:id_partition/:style/:filename"
+  #     })
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.action_controller.asset_host = 'http://assets.example.com'
 
@@ -54,7 +64,7 @@ Rails.application.configure do
 
   # Use a real queuing backend for Active Job (and separate queues per environment)
   # config.active_job.queue_adapter     = :resque
-  # config.active_job.queue_name_prefix = "scoutrapp_#{Rails.env}"
+  # config.active_job.queue_name_prefix = "scout-master_#{Rails.env}"
   config.action_mailer.perform_caching = false
 
   # Ignore bad email addresses and do not raise email delivery errors.

@@ -1,0 +1,10 @@
+<h1>location <%= @location.title %></h1>
+<%= image_tag @location.image.url(:large) %>
+<p> <%= @location.body %></p>
+<% if  @location.user == current_user %>
+  <%= link_to 'Edit', edit_location_path(@location) %>
+  <%= link_to 'Back', locations_path %>
+  <%= link_to 'Delete', @location, method: :delete %>
+<% end %>
+
+<%= render 'comments/comment' %>

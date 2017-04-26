@@ -1,0 +1,34 @@
+<%= form_for @user, :html => {class: 'new_user form-horizontal'} do |f| %>
+    <div class="row"><legend class="col-md-4 col-md-offset-4">Create Account:</legend></div>
+    <fieldset>
+        <div class="form-group">
+            <%= f.label :name, 'Name*', class: 'col-md-4 control-label' %>
+            <div class="col-md-5">
+                <%= f.text_field :name, class: 'form-control' %>
+            </div>
+        </div>
+        <div class="form-group">
+            <%= f.label :email, 'Email*', class: 'col-md-4 control-label' %>
+            <div class="col-md-5">
+                <%= f.text_field :email, class: 'form-control' %>
+            </div>
+        </div>
+        <div class="form-group">
+            <%= f.label :password, 'Password*', class: 'col-md-4 control-label' %>
+            <div class="col-md-5">
+                <%= f.password_field :password, class: 'form-control' %>
+            </div>
+        </div>
+        <div class="form-group">
+            <%= f.label :password_confirmation, 'Confirm Password*', class: 'col-md-4 control-label' %>
+            <div class="col-md-5">
+                <%= f.password_field :password_confirmation, class: 'form-control' %>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-8 col-md-offset-4">
+                <%= f.submit 'Create Account', class: 'btn btn-success' %>
+            </div>
+        </div>
+    </fieldset>
+<% end %>

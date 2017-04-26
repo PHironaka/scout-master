@@ -1,0 +1,23 @@
+<%= form_tag sessions_path,{:class => 'form-horizontal'} do %>
+	<div class="row"><legend class="col-md-4 col-md-offset-4">Sign In:</legend></div>
+  <fieldset>
+    <div class="form-group">
+      <%= label_tag :email, 'Email', class: 'col-md-4 control-label' %>
+	    <div class="col-md-5">
+	      <%= text_field_tag :email, params[:email], class: 'form-control' %>
+	    </div>
+    </div>
+    <div class="form-group">
+      <%= label_tag :password, 'Password', class: 'col-md-4 control-label' %>
+	    <div class="col-md-5">
+	      <%= password_field_tag :password, nil, class: 'form-control' %>
+	    </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-8 col-md-offset-4">
+          <%= submit_tag 'Log in', class: 'btn btn-success' %>
+	        <%= link_to "Don't have an account?", new_user_path, class: 'btn btn-primary' %>
+        </div>
+    </div>
+  </fieldset>
+<% end %>

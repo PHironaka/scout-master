@@ -1,0 +1,4 @@
+<%= form_for([@location, @location.comments.build] ) do |f| %>
+  <%= f.text_area :content, class: 'form-control' %>
+  <%= f.submit 'Create Comment', class: 'btn btn-success'%>
+<% end %>

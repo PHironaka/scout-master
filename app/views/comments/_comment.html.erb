@@ -1,0 +1,13 @@
+<h2><%= pluralize(@comments.count, "Comment") %></h2>
+
+
+<%= @comments.each do |comment| %>
+    <h3><%= comment.user.name %></h3>
+    <p><%= comment.content %></p>
+      <% if current_user == comment.user %>
+        <%= link_to "Delete", [comment.location, comment] , method: :delete %>
+        <%= link_to "Edit", edit_location_comment_path(comment.location, comment ) %>
+        <% end %>
+<% end %>
+
+<%= render 'comments/form' %>
