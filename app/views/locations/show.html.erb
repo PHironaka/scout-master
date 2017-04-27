@@ -1,4 +1,7 @@
 <h1>location <%= @location.title %></h1>
+<h2>By <%= link_to @location.user.name, user_path(@location.user) %></h2>
+<%= image_tag @location.user.avatar.url(:thumb) %>
+
 <%= image_tag @location.image.url(:large) %>
 <p> <%= @location.body %></p>
 <% if  @location.user == current_user %>
