@@ -1,7 +1,7 @@
 <h2><%= pluralize(@comments.count, "Comment") %></h2>
 
 
-<div class="row comment col-xs-8">
+<div class="row comment col-md-8">
 
 
 <% @comments.each do |comment| %>
@@ -9,7 +9,7 @@
   <div class="comment-list--image">
     <%= image_tag comment.user.avatar.url(:thumb) %>
   </div>
-<div class="comment comment-list--content  col-xs-10">
+<div class="comment comment-list--content  col-md-10">
   <h3><%= comment.user.name %></h3>
   <p><%= comment.content %></p>
     <!-- <% if current_user == comment.user %>
