@@ -1,4 +1,10 @@
 class Location < ApplicationRecord
+  # extend FriendlyId
+  # friendly_id :title, use: :slugged
+
+  # def should_generate_new_friendly_id?
+  #   new_record?
+  # end
 
 
   belongs_to :user
@@ -25,8 +31,11 @@ class Location < ApplicationRecord
       where("title LIKE ?", "%#{search}%")
   end
 
+
+
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
   has_many :comments, dependent: :destroy
+
 
 
 end

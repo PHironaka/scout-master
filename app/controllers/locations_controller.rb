@@ -60,11 +60,13 @@ class LocationsController < ApplicationController
   end
 
   private
+    def location_params
+      params.require(:location).permit(:title, :body, :image, :slug)
+    end
+
+
     def set_location
       @location = Location.friendly.find(params[:id])
-    end
-    def location_params
-      params.require(:location).permit(:title, :body, :image)
     end
 
 
