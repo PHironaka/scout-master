@@ -1,13 +1,27 @@
-<h1>location <%= @location.title %></h1>
-<h2>By <%= link_to @location.user.name, user_path(@location.user) %></h2>
-<%= image_tag @location.user.avatar.url(:thumb) %>
 
+<div class="location-content row">
+
+
+<div class="col-md-6 ">
 <%= image_tag @location.image.url(:large) %>
-<p> <%= @location.body %></p>
-<% if  @location.user == current_user %>
-  <%= link_to 'Edit', edit_location_path(@location) %>
-  <%= link_to 'Back', locations_path %>
-  <%= link_to 'Delete', location_path(@location), method: :delete %>
-<% end %>
+</div>
 
+<div class="location-content--post col-md-6">
+  <%= image_tag @location.user.avatar.url(:thumb) %>
+  <h3>@<%= link_to @location.user.name, user_path(@location.user) %></h3>
+  <h2> <%= @location.title %></h2>
+  <p> <%= @location.body %></p>
+  <div class="location-content--post--owner">
+    <% if  @location.user == current_user %>
+      <%= link_to 'Edit', edit_location_path(@location) %>
+      <%= link_to 'Back', locations_path %>
+      <%= link_to 'Delete', location_path(@location), method: :delete %>
+    <% end %>
+  </div>
+
+</div>
+
+
+
+</div>
 <%= render 'comments/comment' %>

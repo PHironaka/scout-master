@@ -5,25 +5,40 @@
   width: 100%;
   padding:1em 0 1.5em 0;
   float: left;
-  img {
-    float: left;
-    max-width: 70px;
-  }
 
-  &--content {
-    float: left;
-    margin-left: 1em;
-    h3 {
-      margin: 0;
+    .comment-list {
+      width: 100%;
+      float: left;
+      margin-bottom: 1em;
+      padding-bottom: 1em;
+      border-bottom: 1px solid #eee;
+        &:nth-last-child(2) {
+          border-bottom: none;
+        }
+        &--image {
+          float: left;
+          img {
+            max-width: 70px;
+          }
+        }
+          &--content {
+            float: left;
+            padding-top: 0;
+            h3 {
+              margin: 0;
+            }
+          }
     }
 
-  }
-}
-
-#new_comment {
-  float: left;
-  width: 100%;
-    input.btn.btn-success {
-      margin-top: 2em;
+    #new_comment {
+      float: left;
+      width: 100%;
+          input.btn.btn-success {
+            margin: 1em 0;
+                background-color: #33b780;
+                border: none;
+              border-radius: 0;
+          }
     }
+
 }

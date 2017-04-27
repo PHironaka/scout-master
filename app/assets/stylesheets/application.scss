@@ -15,7 +15,23 @@
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
+ @import "footer";
+
+
 
 body {
   overflow-x: hidden;
+  font-family: 'Nunito', sans-serif;
+}
+
+img {
+  max-width: 100%;
+}
+
+h2 {
+  font-family: 'Fjalla One', sans-serif;
+}
+
+a {
+  color: #333;
 }

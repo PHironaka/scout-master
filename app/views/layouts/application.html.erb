@@ -3,7 +3,7 @@
   <head>
     <title>ScoutMaster</title>
     <%= csrf_meta_tags %>
-
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Nunito" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -20,7 +20,7 @@
           </div>
         <% end %>
         <%= yield %>
-        <%= render 'layouts/footer' %>
+        <%= render 'partials/footer' %>
       </div>
     </div>
     </body>
