@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .comment {
   width: 100%;
-  padding: 2em 0;
+  padding:1em 0 1.5em 0;
   float: left;
   img {
     float: left;
@@ -18,4 +18,12 @@
     }
 
   }
+}
+
+#new_comment {
+  float: left;
+  width: 100%;
+    input.btn.btn-success {
+      margin-top: 2em;
+    }
 }
