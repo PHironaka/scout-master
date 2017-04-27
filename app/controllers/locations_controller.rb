@@ -12,7 +12,8 @@ class LocationsController < ApplicationController
   end
 
   def show
-    @location = Location.find(params[:id])
+    # @location = Location.find(params[:id])
+    @location = Location.friendly.find(params[:id])
     @comments = Comment.where(location_id: @location).order("created_at DESC")
   end
 
@@ -37,11 +38,11 @@ class LocationsController < ApplicationController
   end
 
   def edit
-    @location = Location.find(params[:id])
+    @location = Location.friendly.find(params[:id])
   end
 
   def update
-    @location = Location.find(params[:id])
+    @location = Location.friendly.find(params[:id])
 
     # using the WHITE-LISTED params from the edit form (feeling, and body) only, try to update the existing blurb. If it succeeds, take the user to the blurb show view:
     if  @location.update_attributes(location_params)
@@ -53,7 +54,7 @@ class LocationsController < ApplicationController
   end
 
   def destroy
-    @location = Location.find params[:id]
+    @location = Location.friendly.find params[:id]
     @location.destroy
     redirect_to locations_path
 
@@ -63,11 +64,5 @@ class LocationsController < ApplicationController
     def location_params
       params.require(:location).permit(:title, :body, :image, :slug)
     end
-
-
-    def set_location
-      @location = Location.friendly.find(params[:id])
-    end
-
 
 end

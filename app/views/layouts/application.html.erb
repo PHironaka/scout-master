@@ -10,6 +10,9 @@
 
     <body>
       <%= render 'partials/navbar' %>
+      <div class="row">
+
+
       <div class="container">
         <% if flash[:alert] %>
           <div class="alert alert-danger">
@@ -19,5 +22,6 @@
         <%= yield %>
         <%= render 'layouts/footer' %>
       </div>
+    </div>
     </body>
   </html>

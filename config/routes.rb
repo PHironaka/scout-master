@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'locations#index'
   resources :users
   resources :locations do
-  resources :comments
+    resources :comments
   end
 
 

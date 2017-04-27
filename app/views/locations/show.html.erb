@@ -4,7 +4,7 @@
 <% if  @location.user == current_user %>
   <%= link_to 'Edit', edit_location_path(@location) %>
   <%= link_to 'Back', locations_path %>
-  <%= link_to 'Delete', @location, method: :delete %>
+  <%= link_to 'Delete', location_path(@location), method: :delete %>
 <% end %>
 
 <%= render 'comments/comment' %>
