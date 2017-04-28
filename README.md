@@ -21,6 +21,7 @@ Scout Master aims to reduce the pre-produciton time allocated towards location s
 - Search functionality for locations
 - Comments for users to make on locations
 - HTML, Sass
+- [Khaled Ipsum](http://khaledipsum.com/)
 
 
 ## Install

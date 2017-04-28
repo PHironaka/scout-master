@@ -27,11 +27,15 @@
 
 
       <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle glyphicon glyphicon-align-justify" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
+            <% if logged_in? %>
+              <%= image_tag current_user.avatar.url(:thumb) %>
+              <li class="dropdown">
+
+          <a href="#" class="dropdown-toggle glyphicon glyphicon-option-horizontal" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
           <ul class="dropdown-menu">
 
-              <% if logged_in? %>
+
+
               <li><%= link_to 'Create a Location', new_location_path %></li>
 
               <li><%= link_to 'Fellow Scouters', users_path %></li>
@@ -42,12 +46,13 @@
               <% else %>
               <li><a href="#"><%= link_to 'Log In', new_session_path %></a></li>
               <li><a href="#"><%= link_to 'Create Account', new_user_path %></a></li>
-              <% end %>
+
 
 </a></li>
 
 
           </ul>
+          <% end %>
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->

@@ -1,3 +1,14 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.navbar-right {
+
+  img {
+    max-width: 50px;
+    border-radius: 28px;
+  }
+}
+
+.navbar {
+  padding: 1em 0;
+}

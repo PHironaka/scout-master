@@ -4,6 +4,7 @@ class LocationsController < ApplicationController
   before_action :authorize, except: [:index, :show]
 
   def index
+    
     if params[:search]
       @locations = Location.search(params[:search])
     else
