@@ -44,8 +44,8 @@
                 <li><a href="#"><%= link_to 'Logout', logout_path, method: 'delete' %></a></li>
 
               <% else %>
-              <li><a href="#"><%= link_to 'Log In', new_session_path %></a></li>
-              <li><a href="#"><%= link_to 'Create Account', new_user_path %></a></li>
+              <li><%= link_to 'Log In', new_session_path %></li>
+              <li><%= link_to 'Create Account', new_user_path %></li>
 
 
 </a></li>
