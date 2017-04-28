@@ -23,7 +23,11 @@
         }
           &--content {
             float: left;
-            padding-top: 0;
+            padding: 0 2em;
+            @media(max-width:992px){
+              padding: 1em 0 0 0;
+            }
+
             h3 {
               margin: 0;
             }
@@ -35,9 +39,15 @@
       width: 100%;
           input.btn.btn-success {
             margin: 1em 0;
-                background-color: #33b780;
-                border: none;
-              border-radius: 0;
+background-color: #33b780;
+border: none;
+margin-left: 0;
+padding: 5px;
+text-align: center;
+width: 10em;
+              &:hover {
+                background-color: #81dcb6;
+              }
           }
     }
 

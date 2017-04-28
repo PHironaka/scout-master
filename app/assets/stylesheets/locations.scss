@@ -1,6 +1,14 @@
 // Place all the styles related to the locations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.location-index {
+  margin-left: 15%;
+  margin-bottom: 3em;
+  text-align: center;
+    h1 {
+      margin-bottom: 1em;
+    }
+}
 
 .location-content {
   h3 {

@@ -35,3 +35,18 @@ h2 {
 a {
   color: #333;
 }
+
+input {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #929292;
+  line-height: 2;
+  width: 16em;
+}
+
+input[type="submit"] {
+  background: none;
+  padding:0 0 1px 0;
+  margin-left: -4px;
+  text-align: right;
+}

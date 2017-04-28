@@ -32,10 +32,9 @@
           <ul class="dropdown-menu">
 
               <% if logged_in? %>
-              <li><a href="#">Separated link</a></li>
+              <li><%= link_to 'Locations', locations_path %></li>
+              <li><%= link_to 'Users', users_path %></li>
 
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
                 <li role="separator" class="divider"></li>
                 <li><a href="#"><%= link_to 'Logout', logout_path, method: 'delete' %></a></li>
 
