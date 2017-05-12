@@ -3,11 +3,12 @@
 
 <%= image_tag @user.avatar.url(:medium) %>
 <h2><%= @user.name %>'s locations</h2>
-
+<%= link_to 'Edit Profile', edit_user_path(@user) %>
 <% @user.locations.each do |p| %>
 <p><%= link_to p.title, location_path(p.id) %> </p>
 
 <% if current_user == p.user %>
+
 <%= link_to 'Delete', p, method: :delete %>
   <% end %>
 
