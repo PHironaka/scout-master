@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170427171158) do
+ActiveRecord::Schema.define(version: 20170502062545) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "content"
@@ -45,6 +45,9 @@ ActiveRecord::Schema.define(version: 20170427171158) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.string   "slug"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "address"
     t.index ["slug"], name: "index_locations_on_slug", unique: true
     t.index ["user_id"], name: "index_locations_on_user_id"
   end

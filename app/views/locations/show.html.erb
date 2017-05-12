@@ -10,6 +10,8 @@
   <%= image_tag @location.user.avatar.url(:thumb) %>
   <h3>@<%= link_to @location.user.name, user_path(@location.user) %></h3>
   <h2> <%= @location.title %></h2>
+  <p><%= @location.address %></p>
+
   <p> <%= @location.body %></p>
   <div class="location-content--post--owner">
     <% if  @location.user == current_user %>

@@ -4,12 +4,20 @@ class LocationsController < ApplicationController
   before_action :authorize, except: [:index, :show]
 
   def index
-    
+
     if params[:search]
       @locations = Location.search(params[:search])
     else
       @locations = Location.all.order("created_at DESC")
     end
+
+    @hash = Gmaps4rails.build_markers(@locations) do |location, marker|
+      marker.lat location.latitude
+      marker.lng location.longitude
+      marker.infowindow location.title
+      marker.infowindow "<a href='/locations/#{location.friendly_id}'> #{location.title} </a>"
+    end
+
   end
 
   def show
@@ -62,8 +70,13 @@ class LocationsController < ApplicationController
   end
 
   private
+
+  def set_location
+    @location = Location.find(params[:id])
+  end
+
     def location_params
-      params.require(:location).permit(:title, :body, :image, :slug)
+      params.require(:location).permit(:latitude, :longitude,:address, :title, :body, :image, :slug)
     end
 
 end
