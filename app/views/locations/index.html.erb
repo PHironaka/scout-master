@@ -43,9 +43,24 @@ handler.buildMap({ provider: { styles: [
 <h2><%= link_to p.title, location_path(p) %> </h2>
 <%= image_tag p.image.url(:large) %>
 <p> Written by <%= link_to p.user.name, user_path(p.user) %></p>
-
-
 <h6>Posted <%= time_ago_in_words(p.created_at) %> ago</h6>
 <p> <%=  p.body %></p>
+
+
+
+
+<%= link_to like_location_path(p), class: "like", method: :put do %>
+  <button type="button" class="btn btn-info" aria-label="Left Align" name="button">
+    <span class="glyphicon glyphicon-thumbs-up glyphicon-align-center" aria-hidden="true"></span>
+    <span class="badge"><%= p.get_upvotes.size %></span>
+  </button>
+  <% end %>
+
+  <%= link_to dislike_location_path(p), class: "like", method: :put do %>
+    <button type="button" class="btn btn-info" aria-label="Left Align" name="button">
+      <span class="glyphicon glyphicon-thumbs-down glyphicon-align-center" aria-hidden="true"></span>
+      <span class="badge"><%= p.get_downvotes.size %></span>
+    </button>
+    <% end %>
 </div>
 <% end %>

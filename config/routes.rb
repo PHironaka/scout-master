@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
   root 'locations#index'
   resources :users
+
   resources :locations do
     resources :comments
+
+    member do
+      put "like" => "locations#upvote"
+      put "dislike" => "locations#downvote"
+    end
   end
 
 

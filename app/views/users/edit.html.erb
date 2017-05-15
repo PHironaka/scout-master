@@ -1,4 +1,4 @@
-<h1>Users#edit</h1>
+<h1><%= @user.name %>, Edit your account</h1>
 
 
 
@@ -22,12 +22,12 @@
                 <%= f.password_field :password, class: 'form-control' %>
             </div>
         </div>
-        <div class="form-group">
+        <!-- <div class="form-group">
             <%= f.label :password_confirmation, 'Confirm Password*', class: 'col-md-4 control-label' %>
             <div class="col-md-5">
                 <%= f.password_field :password_confirmation, class: 'form-control' %>
             </div>
-        </div>
+        </div> -->
 
         <div class="form-group">
             <%= f.label :avatar, 'Profile Pic*', class: 'col-md-4 control-label' %>

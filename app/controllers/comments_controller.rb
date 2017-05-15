@@ -38,7 +38,7 @@ class CommentsController < ApplicationController
   end
 
   def find_comment
-    @comment = @location.comments.friendly.find(params[:id])
+    @comment = @location.comments.find(params[:id])
   end
 
   def comment_owner
