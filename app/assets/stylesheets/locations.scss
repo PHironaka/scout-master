@@ -2,15 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .location-index {
-  margin-left: 15%;
+  margin-left: 0%;
   margin-bottom: 3em;
   text-align: center;
-    h1 {
+    h2 {
       margin-bottom: 1em;
+      color: white;
     }
 }
 
+.location-form {
+  margin-top: 2em;
+}
+
 .location-content {
+
+  margin: 2em 0 0;
   h3 {
     margin: 0;
   }
@@ -28,7 +35,6 @@
     h3 {
       float: left;
       font-size:1.2em;
-      margin-left: 1em;
       @media(max-width:992px){
         float: none;
       }
@@ -37,10 +43,8 @@
     }
     h2 {
 
-      margin-top: 2em;
-      @media(max-width:992px){
-        margin-top:1em;
-      }
+      margin-top: 1em;
+
     }
     p {
       float: left;
@@ -76,4 +80,38 @@ top: 0;
 left: 0;
 width: 100%;
 height: 100%;
+}
+
+.button {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 6px 0;
+    font-size: 20px;
+    line-height: 1.42857143;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.button-info {
+  color: #4ae5c2;
+    background-color: transparent;
+  outline: none;
+
+  .badge {
+    color: #333;
+    background-color: transparent;
+    padding: 2px 4px 6px;
+    font-size: 13px;
+  }
 }

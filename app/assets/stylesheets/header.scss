@@ -1,14 +1,82 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.navbar-right {
 
-  img {
-    max-width: 50px;
-    border-radius: 28px;
+
+.navbar {
+  padding: 1em 0 0;
+  background: #4AE5C2;
+  border-color: transparent !important;
+  margin: 0;
+
+
+  .navbar-brand {
+    color: white;
+  }
+
+  .navbar-form {
+        width: 33em;
+    padding: 2em 0;
+
   }
 }
 
-.navbar {
-  padding: 1em 0;
+.navbar-right {
+  img {
+    float: left;
+    max-width: 40px;
+    border-radius: 28px;
+    margin-right: 15px;
+  }
+  h4 {
+    font-size: 1em;
+    float: left;
+  }
+  li {
+    background-color: #5bc7af;
+    border-radius: 5px;
+    margin-right: 0;
+
+    a {
+      color: white;
+      padding: 3px 11px;
+    }
+  }
+}
+
+.form-control {
+outline: none;
+}
+
+.form-group {
+      width: 20em;
+
+
+      .form-control {
+        width: 35em;
+      }
+}
+
+.dropdown-menu li a {
+  color: black;
+  background-color: white;
+}
+
+.open {
+  h4 {
+        margin-right: 10px;
+  }
+
+
+  .divider {
+    background: black;
+    height: 1px;
+    width: 100%;
+  }
+
+
+}
+
+.search {
+  margin-top: 4em;
 }

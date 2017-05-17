@@ -16,7 +16,7 @@ class LocationsController < ApplicationController
       marker.lat location.latitude
       marker.lng location.longitude
       marker.infowindow location.title
-      marker.infowindow "<a href='/locations/#{location.friendly_id}'> #{location.title} </a>"
+      marker.infowindow "<div class='col-sm-7'><h4><a href='/locations/#{location.friendly_id}'> #{location.title} </a></h4><p> #{location.body} </p> </div>"
     end
 
   end

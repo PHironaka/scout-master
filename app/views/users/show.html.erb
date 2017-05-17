@@ -1,15 +1,22 @@
-<% if current_user == @user %>
-<%= link_to 'Edit Profile', edit_user_path(@user) %>
-<% end %>
 
-<h1>User <%= @user.name %></h1>
+<div class="col-sm-5 ">
 
 
-<%= image_tag @user.avatar.url(:medium) %>
+
+  <h1> <%= @user.name %></h1>
+  <% if current_user == @user %>
+  <%= link_to 'Edit Profile', edit_user_path(@user) %>
+  <% end %>
+<%= image_tag @user.avatar.url %>
+<p><%= @user.summary %></p>
+</div>
+
+<div class="col-sm-7 ">
 <h2><%= @user.name %>'s locations</h2>
 <% @user.locations.each do |p| %>
-<p><%= link_to p.title, location_path(p.id) %> </p>
-<%= image_tag p.image.url(:medium) %>
+<%= image_tag p.image.url(:large) %>
+<h2><%= link_to p.title, location_path(p.id) %> </h2>
+<p><%= p.body %> </p>
 
 
 
@@ -19,3 +26,4 @@
   <% end %>
 
 <% end %>
+</div>

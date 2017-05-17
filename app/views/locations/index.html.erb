@@ -1,17 +1,7 @@
-<div class="location-index col-md-8">
 
-  <h1>Search for your location.</h1>
+    </div>
 
-  <%= form_tag locations_path, method: :get do %>
-    <p>
-      <%= text_field_tag :search, params[:search] %>
-      <%= submit_tag "Search", name: nil %>
-    </p>
-  <% end %>
-
-</div>
-
-<div  class="location-content--index col-md-12">
+<div  class="location-content--index ">
   <div class="map-container"  id="multi_markers" ></div>
 </div>
 
@@ -36,31 +26,32 @@ handler.buildMap({ provider: { styles: [
 });
 </script>
 
-
+<div class="container">
 
 <% @locations.each do |p| %>
 <div class="location-content--index col-md-6">
 <h2><%= link_to p.title, location_path(p) %> </h2>
+<p> Scouted by <%= link_to p.user.name, user_path(p.user) %></p>
+
 <%= image_tag p.image.url(:large) %>
-<p> Written by <%= link_to p.user.name, user_path(p.user) %></p>
-<h6>Posted <%= time_ago_in_words(p.created_at) %> ago</h6>
 <p> <%=  p.body %></p>
+<p>Posted <%= time_ago_in_words(p.created_at) %> ago</p>
 
 
 
 
 <%= link_to like_location_path(p), class: "like", method: :put do %>
-  <button type="button" class="btn btn-info" aria-label="Left Align" name="button">
-    <span class="glyphicon glyphicon-thumbs-up glyphicon-align-center" aria-hidden="true"></span>
-    <span class="badge"><%= p.get_upvotes.size %></span>
+  <button type="button" class="button button-info" aria-label="Left Align" name="button">
+    <span class="glyphicon glyphicon glyphicon-heart " aria-hidden="true"></span>
+    <span class="badge"><%= p.get_upvotes.size %> likes</span>
   </button>
   <% end %>
 
-  <%= link_to dislike_location_path(p), class: "like", method: :put do %>
+  <!-- <%= link_to dislike_location_path(p), class: "like", method: :put do %>
     <button type="button" class="btn btn-info" aria-label="Left Align" name="button">
       <span class="glyphicon glyphicon-thumbs-down glyphicon-align-center" aria-hidden="true"></span>
       <span class="badge"><%= p.get_downvotes.size %></span>
     </button>
-    <% end %>
+    <% end %> -->
 </div>
 <% end %>

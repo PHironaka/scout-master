@@ -40,17 +40,48 @@ a {
   color: #333;
 }
 
+p {
+  margin: 10px 0;
+}
+
 input {
   outline: none;
   border: none;
-  border-bottom: 1px solid #929292;
   line-height: 2;
-  width: 16em;
+      width: 16em;
+    background: #5bc7af;
+    color: white;
+    border-radius: 5px;
+    padding: 3px 15px;
 }
+
+
 
 input[type="submit"] {
   background: none;
   padding:0 0 1px 0;
-  margin-left: -4px;
-  text-align: right;
+  margin-left: 14px;
+  width: 6em;
+  background: #5bc7af;
+  color: white;
+  border-radius: 5px;
+  padding: 3px 7px;
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #fff;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #fff;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #fff;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    #fff;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+   color:    #fff;
 }
