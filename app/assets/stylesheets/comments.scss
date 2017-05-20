@@ -18,12 +18,13 @@
         &--image {
           float: left;
           img {
-            max-width: 70px;
+            max-width: 35px;
+  border-radius: 26px;
           }
         }
           &--content {
             float: left;
-            padding: 0 2em;
+            padding: 0 1em;
             @media(max-width:992px){
               padding: 1em 0 0 0;
             }
@@ -42,6 +43,7 @@
 
 
 }
+
 
 input.btn.btn-success {
   margin: 1em 0;

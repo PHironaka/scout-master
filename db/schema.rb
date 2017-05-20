@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170515213246) do
+ActiveRecord::Schema.define(version: 20170520161039) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "content"
@@ -64,6 +64,10 @@ ActiveRecord::Schema.define(version: 20170515213246) do
     t.datetime "avatar_updated_at"
     t.string   "slug"
     t.string   "summary"
+    t.string   "hometown"
+    t.string   "portfolio"
+    t.string   "instagram"
+    t.string   "socialtwo"
     t.index ["slug"], name: "index_users_on_slug", unique: true
   end
 

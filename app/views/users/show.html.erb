@@ -1,21 +1,34 @@
 
-<div class="col-sm-5 ">
+<div class="col-sm-5 user ">
 
 
 
-  <h1> <%= @user.name %></h1>
-  <% if current_user == @user %>
-  <%= link_to 'Edit Profile', edit_user_path(@user) %>
-  <% end %>
 <%= image_tag @user.avatar.url %>
+<h1> <%= @user.name %></h1>
+<h3>Bio</h3>
 <p><%= @user.summary %></p>
+
+<h3>Portfolio</h3>
+<a href="<%= @user.portfolio%>" target="_blank"><%= @user.portfolio%></a>
+
+<h3>Social</h3>
+<a href="https://instagram.com/<%= @user.instagram%>" target="_blank"><%= @user.instagram%></a>
+<a href="https://twitter.com/<%= @user.socialtwo%>" target="_blank"><%= @user.socialtwo%></a>
+
+
+<h3>Hometown</h3>
+<p><%= @user.hometown %></p>
+<% if current_user == @user %>
+<%= link_to 'Edit Profile', edit_user_path(@user) %>
+<% end %>
 </div>
 
 <div class="col-sm-7 ">
 <h2><%= @user.name %>'s locations</h2>
 <% @user.locations.each do |p| %>
+<div class="user--locations ">
 <%= image_tag p.image.url(:large) %>
-<h2><%= link_to p.title, location_path(p.id) %> </h2>
+<h2><%= link_to p.title, location_path(p) %> </h2>
 <p><%= p.body %> </p>
 
 
@@ -24,6 +37,6 @@
 
 <%= link_to 'Delete', p, method: :delete %>
   <% end %>
-
+</div>
 <% end %>
 </div>

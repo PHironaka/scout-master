@@ -54,16 +54,18 @@
       <ul class="nav navbar-nav navbar-right">
             <% if logged_in? %>
               <%= image_tag current_user.avatar.url(:thumb) %>
+
+                <!-- <li class="dropdown">
+                  <a href="#" class="dropdown-toggle glyphicon glyphicon glyphicon-plus" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
+                </li> -->
               <li class="dropdown">
 
-          <a href="#" class="dropdown-toggle glyphicon glyphicon-user" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
+          <a href="#" class="dropdown-toggle glyphicon glyphicon-option-horizontal" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
           <ul class="dropdown-menu">
-            <li><a><%= current_user.name %></a></li>
+            <h2><%= current_user.name %></h2>
 
-
-
-            <li><%= link_to 'Create a Location', new_location_path %></li>
-            <li><%= link_to 'Edit Profile', users_path %></li>
+<li><%= link_to 'View Profile', user_path(current_user) %></li>
+            <li><%= link_to 'Edit Profile', edit_user_path(current_user) %></li>
 
               <li><%= link_to 'Fellow Scouters', users_path %></li>
 
@@ -71,8 +73,8 @@
                 <li><a href="#"><%= link_to 'Logout', logout_path, method: 'delete' %></a></li>
 
               <% else %>
-              <li><%= link_to 'Log In', new_session_path %></li>
-              <li><%= link_to 'Create Account', new_user_path %></li>
+              <li class="login"><%= link_to 'Log In', new_session_path, class: 'login' %></li>
+              <li class="login"><%= link_to 'Create Account', new_user_path, class: 'login' %></li>
 
 
 </a></li>
