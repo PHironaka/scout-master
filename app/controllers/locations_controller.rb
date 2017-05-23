@@ -16,7 +16,12 @@ class LocationsController < ApplicationController
       marker.lat location.latitude
       marker.lng location.longitude
       marker.infowindow location.title
-      marker.infowindow "<div class='col-sm-7'><h4><a href='/locations/#{location.friendly_id}'> #{location.title} </a></h4><p> #{location.body} </p> </div>"
+      marker.picture({
+                 :url => "https://maxcdn.icons8.com/Color/PNG/48/Maps/user_location-48.png",
+                 :width   => 48,
+                 :height  => 48
+                })
+      marker.infowindow "<h4><a href='/locations/#{location.friendly_id}'>  #{location.title} </a></h4><p> #{location.body} </p> "
     end
 
   end

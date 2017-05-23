@@ -23,7 +23,9 @@ handler.buildMap({ provider: { styles: [
       { "weight": 2.8 }
     ]
   }
-]},  internal: {id: 'multi_markers'}}, function(){
+]},
+
+  internal: {id: 'multi_markers'}}, function(){
   markers = handler.addMarkers(<%=raw @hash.to_json %>);
   handler.bounds.extendWith(markers);
   handler.fitMapToBounds();

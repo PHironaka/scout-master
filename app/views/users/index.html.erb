@@ -1,5 +1,7 @@
 <h1>Fellow Scouters</h1>
 
 <% @users.each do |p| %>
-  <h2><%= link_to p.name, user_path(p) %> </h2>
+<h2><%= link_to p.name, user_path(p) %> </h2>
+
+  <img src="<%= p.avatar %>">
 <% end %>

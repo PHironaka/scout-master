@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  get 'static_pages/home'
-
-  get 'static_pages/help'
-
+  get '/help' => 'static_pages#help'
+  get '/about' => 'static_pages#about'
+  get    '/login' => 'sessions#new'
+  get    '/terms' => 'static_pages#terms'
   root 'locations#index'
   resources :users
 
