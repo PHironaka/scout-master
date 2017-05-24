@@ -1,7 +1,21 @@
-<h1>Fellow Scouters</h1>
+<h2>Fellow Scouters</h2>
+<div class="user-content row">
 
 <% @users.each do |p| %>
-<h2><%= link_to p.name, user_path(p) %> </h2>
 
-  <img src="<%= p.avatar %>">
+<div class="user-content--users row ">
+
+    <div class="user-content--users--image col-sm-3">
+      <img src="<%= p.avatar.url(:medium)  %>">
+    </div>
+<div class="user-content--users--name col-sm-8">
+    <h2><%= link_to p.name, user_path(p) %> </h2>
+    <p> <%= p.summary %></p>
+
+</div>
+
+
+
+</div>
+
 <% end %>

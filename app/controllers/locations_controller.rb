@@ -9,8 +9,9 @@ class LocationsController < ApplicationController
     if params[:search]
       @locations = Location.search(params[:search])
     else
-      @locations = Location.all.order("created_at DESC")
+      @locations = Location.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 2)
     end
+
 
     @hash = Gmaps4rails.build_markers(@locations) do |location, marker|
       marker.lat location.latitude

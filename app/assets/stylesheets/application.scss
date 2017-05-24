@@ -88,4 +88,10 @@ input[type="submit"] {
 
 svg {
   position: absolute;
+  max-width: 12em;
+}
+
+.pagination {
+  clear: both;
+  float: left;
 }

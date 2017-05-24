@@ -8,12 +8,25 @@
     body {
       font-family: 'Fjalla One', sans-serif;
     }
+    .header {
+      width: 100%;
+      margin: 0 0 1em;
+      padding: 2em 0;
+      background: blue;
+      color: white;
+    }
+
+    .header h1 {
+      padding: 0 1em;
+    }
       /* Email styles need to be inline */
     </style>
   </head>
 
   <body>
-
+<div class="header">
+  <h1>Scout Master</h1>
+</div>
 
     <%= yield %>
   </body>

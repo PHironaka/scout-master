@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
+  get 'password_resets/new'
+
+  get 'password_resets/edit'
+
   get '/help' => 'static_pages#help'
   get '/about' => 'static_pages#about'
   get    '/login' => 'sessions#new'
   get    '/terms' => 'static_pages#terms'
   root 'locations#index'
   resources :users
-
+  resources :password_resets,     only: [:new, :create, :edit, :update]
   resources :locations do
     resources :comments
 
