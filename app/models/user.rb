@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_secure_password
   acts_as_voter
+  before_create :confirmation_token
 
   has_many :comments, dependent: :destroy
   has_many :locations
@@ -32,6 +33,12 @@ class User < ApplicationRecord
     UserMailer.account_activation(self).deliver_now
   end
 
+  def email_activate
+    self.email.confirmed = true
+    self.confirm_token = nil
+    save!(:validate => false)
+  end
+
   def create_reset_digest
     self.reset_token = User.new_token
     update_attribute(:reset_digest,  User.digest(reset_token))
@@ -53,5 +60,13 @@ class User < ApplicationRecord
   validates :password, presence: true, length: { minimum: 6 }
 
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
+
+    private
+      def confirmation_token
+          if self.confirm_token.blank?
+              self.confirm_token = SecureRandom.urlsafe_base64.to_s
+          end
+      end
+
 
 end

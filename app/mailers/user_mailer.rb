@@ -6,7 +6,7 @@ class UserMailer < ApplicationMailer
 
   def signup_confirmation(user)
     @user = user
-    mail(:to => @user.email, :subject => "Registration")
+    mail(:to => @user.email, :subject => "Please confirm your registration")
   end
 
   def password_reset(user)

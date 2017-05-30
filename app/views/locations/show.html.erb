@@ -13,7 +13,17 @@
   <h4><%= @location.address %></h4>
 
   <p> <%= @location.body %></p>
-  <div class="location-content--post--owner">
+
+<p>
+  <%= link_to like_location_path(@location), class: "like", method: :put do %>
+    <button type="button" class="button button-info" aria-label="Left Align" name="button">
+      <span class="glyphicon glyphicon glyphicon-heart " aria-hidden="true"></span>
+      <span class="badge"><%= @location.get_upvotes.size %> likes</span>
+    </button>
+    <% end %>
+</p>
+
+  <div class="location-content--post--owner col-md-12 row">
     <% if  @location.user == current_user %>
       <%= link_to 'Edit', edit_location_path(@location) %>
       <%= link_to 'Delete', location_path(@location), method: :delete %>

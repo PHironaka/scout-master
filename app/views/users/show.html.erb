@@ -23,8 +23,9 @@
 <% end %>
 </div>
 
-<div class="col-sm-7 ">
-<h2><%= @user.name %>'s locations</h2>
+<div class="col-sm-7 user-locations--index">
+
+<h2><%= @user.name %>'s locations <%= pluralize(@user.locations.count, "") %> </h2>
 <% @user.locations.each do |p| %>
 <div class="user--locations ">
 <%= image_tag p.image.url(:large) %>
