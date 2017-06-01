@@ -8,9 +8,10 @@
 
 <div class="location-content--post col-md-6">
   <!-- <%= image_tag @location.user.avatar.url(:thumb) %> -->
-  <h3>@<%= link_to @location.user.name, user_path(@location.user) %></h3>
   <h2> <%= @location.title %></h2>
-  <h4><%= @location.address %></h4>
+  <h3>@<%= link_to @location.user.name, user_path(@location.user) %></h3>
+
+  <h3><%= @location.address %></h3>
 
   <p> <%= @location.body %></p>
 
