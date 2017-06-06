@@ -294,8 +294,8 @@ handler.buildMap({ provider: { styles: [
 
 
 
-<%= link_to like_location_path(p), class: "like-btn", method: :put, remote: :true do  %>
 
+<%= link_to like_location_path(p), class: "like", method: :put do %>
   <button type="button" class="button button-info" aria-label="Left Align" name="button">
     <span class="glyphicon glyphicon glyphicon-heart " aria-hidden="true"></span>
     <span class="badge"><%= p.get_upvotes.size %> likes</span>

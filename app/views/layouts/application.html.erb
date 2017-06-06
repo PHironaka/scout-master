@@ -4,15 +4,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>
-
-      Scoutmaster
-    <%=' | '  +  if content_for?(:title) then yield(:title) end %>
-
-  </title>
+    <title> <%= if content_for?(:title) then yield(:title) + ' | ' end %>
+  Scout Master</title>
     <%= csrf_meta_tags %>
     <link href="https://fonts.googleapis.com/css?family=Ek+Mukta:300|Open+Sans:800" rel="stylesheet">
-    <%= display_meta_tags %>
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="//maps.google.com/maps/api/js?key=AIzaSyDPOqiM9FK-EwvDJ3pouewVtUc8tPSWL7A"></script>
@@ -26,15 +22,15 @@
 
 
       <div class="container">
-        <% flash.each do |message_type, message| %>
-        <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
-
-          <!-- <div class="alert alert-<%= message_type %>"><%= message %></div> -->
+        <% if flash[:alert] %>
+          <div class="alert alert-danger">
+            <%= flash[:alert] %>
+          </div>
         <% end %>
         <%= yield %>
         <%= render 'partials/footer' %>
       </div>
 
-<script src="https://cdn.jsdelivr.net/jquery/3.2.1/jquery.min.map" charset="utf-8"></script>
+
     </body>
   </html>

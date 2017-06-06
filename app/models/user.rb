@@ -3,9 +3,10 @@ class User < ApplicationRecord
 
   extend FriendlyId
   friendly_id :name, use: :slugged
-  before_create :confirmation_token
+
   has_secure_password
   acts_as_voter
+  before_create :confirmation_token
 
 
   validates :name,  presence: true, length: { maximum: 50 }
@@ -38,12 +39,12 @@ class User < ApplicationRecord
     }
   end
 
-  # def send_activation_email
-  #   UserMailer.account_activation(self).deliver_now
-  # end
+  def send_activation_email
+    UserMailer.account_activation(self).deliver_now
+  end
 
   def email_activate
-    self.email_confirmed = true
+    self.email.confirmed = true
     self.confirm_token = nil
     save!(:validate => false)
   end
