@@ -5,12 +5,15 @@ class SessionsController < ApplicationController
   def create
     @user = User.find_by_email(params[:email])
     if @user && @user.authenticate(params[:password])
-      flash[:success] = "Welcome to the Sample App!"
-      session[:user_id] = @user.id
-      redirect_to root_path
+      if @user.email_confirmed
+        session[:user_id] = @user.id
+        redirect_to root_path
+      else
+        flash[:error] = 'Please activate your account.'
+        redirect_to new_session_path
+      end
     else
-      flash[:danger] = 'Invalid email/password combination' # Not quite right!
-      redirect_to new_session_path
+      redirect_to root_path, flash: "Username or Password was wrong"
     end
   end
 

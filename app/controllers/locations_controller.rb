@@ -9,22 +9,32 @@ class LocationsController < ApplicationController
     if params[:search]
       @locations = Location.search(params[:search])
     else
-      @locations = Location.all.order("created_at DESC")
+      @locations = Location.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 2)
     end
+
+    # @locations = Location.all.order(:cached_votes_up => :desc)
+
+    @locations = @locations.paginate(:page => params[:page], :per_page => 6)
 
     @hash = Gmaps4rails.build_markers(@locations) do |location, marker|
       marker.lat location.latitude
       marker.lng location.longitude
       marker.infowindow location.title
-      marker.infowindow "<div class='col-sm-7'><h4><a href='/locations/#{location.friendly_id}'> #{location.title} </a></h4><p> #{location.body} </p> </div>"
+      marker.picture({
+                 :url => "https://maxcdn.icons8.com/Color/PNG/48/Maps/user_location-48.png",
+                 :width   => 48,
+                 :height  => 48
+                })
+      marker.infowindow "<h4><a href='/locations/#{location.friendly_id}'>  #{location.title} </a></h4><p> #{location.body} </p> "
     end
-
   end
 
   def show
     # @location = Location.find(params[:id])
     # @location = Location.friendly.find(params[:id])
     @comments = Comment.where(location_id: @location).order("created_at DESC")
+    set_meta_tags reverse: :true,
+                  description: @location.title
   end
 
   def new
@@ -67,18 +77,18 @@ class LocationsController < ApplicationController
     # @location = Location.friendly.find params[:id]
     @location.destroy
     redirect_to locations_path
-
   end
 
   def upvote
       # @location = Location.friendly.find(params[:id])
     current_user.upvotes @location
-    redirect_to locations_path
+    respond_to do |format|
+    format.html {redirect_to :back }
+    end
   end
 
   def downvote
     current_user.downvotes @location
-    redirect_to locations_path
   end
 
   private

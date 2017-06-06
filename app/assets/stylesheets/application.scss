@@ -18,6 +18,8 @@
  @import "footer";
  @import "header";
 
+ $header-font-family: 'Open Sans', sans-serif;
+
  html, body {
      height: 100%;
      width: 100%;
@@ -25,15 +27,35 @@
 
 body {
   overflow-x: hidden;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Ek Mukta', sans-serif;
+  font-weight: 300;
 }
+
+h3, h4 {
+  font-family: 'Ek Mukta', sans-serif;
+  font-weight: 300;
+}
+
+
+
 
 img {
   max-width: 100%;
 }
 
+h1 {
+  font-family: $header-font-family;
+  font-size: 2em;
+
+}
+
 h2 {
-  font-family: 'Fjalla One', sans-serif;
+  font-family: $header-font-family;
+  font-size: 1.4em;
+}
+
+h3 {
+  font-size:1.2em;
 }
 
 a {
@@ -49,7 +71,7 @@ input {
   border: none;
   line-height: 2;
       width: 16em;
-    background: #5bc7af;
+    background: #03a9f4;
     color: white;
     border-radius: 5px;
     padding: 3px 15px;
@@ -62,7 +84,7 @@ input[type="submit"] {
   padding:0 0 1px 0;
   margin-left: 14px;
   width: 6em;
-  background: #5bc7af;
+  background: #03a9f4;
   color: white;
   border-radius: 5px;
   padding: 3px 7px;
@@ -84,4 +106,49 @@ input[type="submit"] {
 }
 ::-ms-input-placeholder { /* Microsoft Edge */
    color:    #fff;
+}
+
+svg {
+  position: absolute;
+  max-width: 12em;
+}
+
+.pagination {
+  clear: both;
+  float: left;
+}
+
+
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: red;
+  }
+}
+
+.checkbox {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  span {
+    margin-left: 20px;
+    font-weight: normal;
+  }
+}
+
+#session_remember_me {
+  width: auto;
+  margin-left: 0;
+}
+
+.forgot-password {
+  margin: 15px;
 }

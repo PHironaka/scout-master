@@ -1,5 +1,19 @@
-<%= form_for([@location, @comment] ) do |f| %>
-  <%= f.text_area :content %>
-  <%= f.submit %>
+<h2>Edit Comment</h2>
 
+
+<%= form_for([@location, @comment], html: { multipart: true, class: 'new_location form-horizontal' })  do |f| %>
+  <fieldset>
+<div class="form-group">
+  <div class="col-md-5">
+  <%= f.text_area :content, placeholder: 'Comment', class: 'form-control' %>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="col-md-5">
+    <%= f.submit 'Update Comment', class: 'btn btn-success' %>
+      </div>
+        </div>
+
+</fieldset>
 <% end %>

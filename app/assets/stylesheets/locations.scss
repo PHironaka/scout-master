@@ -45,6 +45,8 @@
     h3 {
       float: left;
       font-size:1.2em;
+      width: 100%;
+      margin: .5em 0;
       @media(max-width:992px){
         float: none;
       }
@@ -53,7 +55,7 @@
     }
     h2 {
 
-      margin-top: 1em;
+      margin: 0em;
 
     }
     p {
@@ -72,6 +74,10 @@
   left: 0;
   position: relative;
   top: 0;
+
+  .gm-style-iw {
+    max-width: 300px;
+  }
 }
 
 .map-container {
@@ -114,7 +120,7 @@ height: 100%;
 }
 
 .button-info {
-  color: #4ae5c2;
+  color: #2196F3;
     background-color: transparent;
   outline: none;
 
@@ -123,5 +129,32 @@ height: 100%;
     background-color: transparent;
     padding: 2px 4px 6px;
     font-size: 13px;
+  }
+}
+
+.user-content--users {
+  margin: 1em 0;
+border: 1px solid #eee;
+border-radius: 11px;
+padding: 1.2em 0;
+    &--image {
+      img {
+        float: left;
+        max-width: 75px;
+      border-radius: 42px;
+  margin-right: 15px;
+      }
+
+    }
+    &--name h2 {
+      margin: 0;
+    }
+}
+
+.user-locations--index {
+  padding-top: 1em;
+  h2 {
+    padding-top: 1em;
+    border-top: 1px solid ;
   }
 }
