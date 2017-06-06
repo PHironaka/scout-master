@@ -5,8 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
-    <%= if content_for?(:title) then yield(:title) + ' | ' end %>
-  Scoutmaster
+
+      Scoutmaster
+    <%=' | '  +  if content_for?(:title) then yield(:title) end %>
+
   </title>
     <%= csrf_meta_tags %>
     <link href="https://fonts.googleapis.com/css?family=Ek+Mukta:300|Open+Sans:800" rel="stylesheet">
@@ -24,10 +26,10 @@
 
 
       <div class="container">
-        <% if flash[:alert] %>
-          <div class="alert alert-danger">
-            <%= flash[:alert] %>
-          </div>
+        <% flash.each do |message_type, message| %>
+        <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+
+          <!-- <div class="alert alert-<%= message_type %>"><%= message %></div> -->
         <% end %>
         <%= yield %>
         <%= render 'partials/footer' %>

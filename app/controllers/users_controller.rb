@@ -1,18 +1,6 @@
 class UsersController < ApplicationController
   before_action :authorize, only: [:show]
 
-  def confirm_email
-      @user = User.friendly.find_by_confirm_token(params[:id])
-      if user_params
-        user.email_activate
-        flash[:success]= "Welcome to Scout Master! Your account has now been confirmed."
-        redirect_to root_url
-      else
-        flash[:error] = "Error: User does not exist."
-        redirect_to root_url
-      end
-  end
-
   def index
       @users = User.all
   end
@@ -28,13 +16,25 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      UserMailer.signup_confirmation(@user).deliver_now
+      UserMailer.registration_confirmation(@user).deliver_now
       flash[:success] = "Registration Completed! Please confirm your email address."
       redirect_to root_path
     else
       flash[:error] = "Failure: Something went wrong."
       redirect_to new_user_path
     end
+  end
+
+  def confirm_email
+      @user = User.friendly.find_by_confirm_token(params[:id])
+      if @user
+        @user.email_activate
+        flash[:success]= "Welcome to Scout Master! Your account has now been confirmed."
+        redirect_to root_url
+      else
+        flash[:error] = "Error: User does not exist."
+        redirect_to root_url
+      end
   end
 
   def edit

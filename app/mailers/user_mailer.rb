@@ -4,14 +4,14 @@ class UserMailer < ApplicationMailer
   #   mail to: user.email, subject: "Account activation"
   # end
 
-  def signup_confirmation(user)
+  def registration_confirmation(user)
     @user = user
-    mail(:to => @user.email, :subject => "Please confirm your registration")
+    mail(:to => "#{user.name} <#{user.email}>", :subject => "Please confirm your registration")
   end
 
-  def password_reset(user)
-    @user = user
-    mail to: user.email, subject: "Password reset"
-  end
+  # def password_reset(user)
+  #   @user = user
+  #   mail to: user.email, subject: "Password reset"
+  # end
 
 end
