@@ -1,5 +1,7 @@
 # Scout Master
 
+![Scoutmaster Homepage](https://raw.githubusercontent.com/PHironaka/scout-master/master/app/assets/images/scout-master-screen.jpg)
+
 Producing premium content is difficult, which is made all the more difficult without a proper location. Scout Master is a web application designed to help Producer's around the world find and track THE BEST locations.
 
 Scout Master aims to reduce the pre-produciton time allocated towards location scouting. With a database full of locations (curated by the users), it will hopefully increase overall productivity for teams working on tight timelines.
