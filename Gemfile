@@ -41,7 +41,6 @@ gem 'gmaps4rails'
 gem 'acts_as_votable'
 ## Gemfile for Rails 3+, Sinatra, and Merb
 gem 'will_paginate', '~> 3.1.0'
-gem 'omniauth-facebook'
 gem 'markdown-rails'
 gem 'meta-tags'
 # Use Capistrano for deployment
