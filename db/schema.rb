@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170526062046) do
+ActiveRecord::Schema.define(version: 20170520161039) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "content"
@@ -56,8 +56,8 @@ ActiveRecord::Schema.define(version: 20170526062046) do
     t.string   "name"
     t.string   "email"
     t.string   "password_digest"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
@@ -68,10 +68,6 @@ ActiveRecord::Schema.define(version: 20170526062046) do
     t.string   "portfolio"
     t.string   "instagram"
     t.string   "socialtwo"
-    t.string   "reset_digest"
-    t.datetime "reset_sent_at"
-    t.boolean  "email_confirmed",     default: false
-    t.string   "confirm_token"
     t.index ["slug"], name: "index_users_on_slug", unique: true
   end
 

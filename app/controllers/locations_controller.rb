@@ -9,21 +9,14 @@ class LocationsController < ApplicationController
     if params[:search]
       @locations = Location.search(params[:search])
     else
-      @locations = Location.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 2)
+      @locations = Location.all.order("created_at DESC")
     end
-
-    @locations = @locations.paginate(:page => params[:page], :per_page => 2)
 
     @hash = Gmaps4rails.build_markers(@locations) do |location, marker|
       marker.lat location.latitude
       marker.lng location.longitude
       marker.infowindow location.title
-      marker.picture({
-                 :url => "https://maxcdn.icons8.com/Color/PNG/48/Maps/user_location-48.png",
-                 :width   => 48,
-                 :height  => 48
-                })
-      marker.infowindow "<h4><a href='/locations/#{location.friendly_id}'>  #{location.title} </a></h4><p> #{location.body} </p> "
+      marker.infowindow "<div class='col-sm-7'><h4><a href='/locations/#{location.friendly_id}'> #{location.title} </a></h4><p> #{location.body} </p> </div>"
     end
 
   end

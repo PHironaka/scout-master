@@ -8,25 +8,15 @@
 
 <div class="location-content--post col-md-6">
   <!-- <%= image_tag @location.user.avatar.url(:thumb) %> -->
-  <h2> <%= @location.title %></h2>
   <h3>@<%= link_to @location.user.name, user_path(@location.user) %></h3>
-
-  <h3><%= @location.address %></h3>
+  <h2> <%= @location.title %></h2>
+  <p><%= @location.address %></p>
 
   <p> <%= @location.body %></p>
-
-<p>
-  <%= link_to like_location_path(@location), class: "like", method: :put do %>
-    <button type="button" class="button button-info" aria-label="Left Align" name="button">
-      <span class="glyphicon glyphicon glyphicon-heart " aria-hidden="true"></span>
-      <span class="badge"><%= @location.get_upvotes.size %> likes</span>
-    </button>
-    <% end %>
-</p>
-
-  <div class="location-content--post--owner col-md-12 row">
+  <div class="location-content--post--owner">
     <% if  @location.user == current_user %>
       <%= link_to 'Edit', edit_location_path(@location) %>
+      <%= link_to 'Back', locations_path %>
       <%= link_to 'Delete', location_path(@location), method: :delete %>
     <% end %>
   </div>
