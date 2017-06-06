@@ -44,6 +44,7 @@ gem 'acts_as_votable'
 gem 'will_paginate', '~> 3.1.0'
 gem 'omniauth-facebook'
 gem 'markdown-rails'
+gem 'meta-tags'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

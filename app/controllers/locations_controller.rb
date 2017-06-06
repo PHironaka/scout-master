@@ -27,13 +27,14 @@ class LocationsController < ApplicationController
                 })
       marker.infowindow "<h4><a href='/locations/#{location.friendly_id}'>  #{location.title} </a></h4><p> #{location.body} </p> "
     end
-
   end
 
   def show
     # @location = Location.find(params[:id])
     # @location = Location.friendly.find(params[:id])
     @comments = Comment.where(location_id: @location).order("created_at DESC")
+    set_meta_tags reverse: :true,
+                  description: @location.title
   end
 
   def new
