@@ -7,6 +7,7 @@ end
 
 ruby '2.4.1'
 gem 'dotenv-rails', group: :development, require: 'dotenv/rails-now'
+gem 'pg', '0.18.4'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.2'
 gem 'bcrypt',         '3.1.11'
@@ -39,10 +40,7 @@ gem 'friendly_id'
 gem 'geocoder'
 gem 'gmaps4rails'
 gem 'acts_as_votable'
-## Gemfile for Rails 3+, Sinatra, and Merb
-gem 'will_paginate', '~> 3.1.0'
-gem 'markdown-rails'
-gem 'meta-tags'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -61,9 +59,6 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-group :production do
-  gem 'pg', '0.18.4'
-end
 
 
 group :test do

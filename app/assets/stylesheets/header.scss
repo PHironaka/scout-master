@@ -5,18 +5,9 @@
 
 .navbar {
   padding: 1em 0 0;
-  background: #2196f3;
+  background: #4AE5C2;
   border-color: transparent !important;
   margin: 0;
-
-  .new-location {
-    float:left;
-    margin: 0px 17px 0 0px;
-background-color: #03a9f4;
-padding: 6px;
-border-radius: 4px;
-color: white;
-  }
 
 
   .navbar-brand {
@@ -33,7 +24,7 @@ color: white;
 .navbar-toggle {
   border-color: transparent !important;
     &:hover {
-      background-color: #03a9f4 !important;
+      background-color: #5bc7af !important;
     }
   .icon-bar {
     background-color: #ffffff !important;
@@ -59,7 +50,7 @@ color: white;
     margin-right: 13px;
   }
   li {
-    background-color: #03a9f4;
+    background-color: #5bc7af;
     border-radius: 5px;
       margin-right: 0;
 
@@ -100,7 +91,7 @@ outline: none;
 
     &:hover {
       color: white;
-      background: #03a9f4;
+      background: #5bc7af;
     }
   }
 
@@ -127,5 +118,5 @@ outline: none;
 }
 
 .search {
-  margin:0 0 1em;
+  margin-top: 4em;
 }
