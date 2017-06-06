@@ -15,8 +15,7 @@ Rails.application.routes.draw do
   get    '/terms' => 'static_pages#terms'
   resources :password_resets,     only: [:new, :create, :edit, :update]
   resources :locations do
-    resources :comments
-
+  resources :comments
     member do
       put "like" => "locations#upvote"
       put "dislike" => "locations#downvote"

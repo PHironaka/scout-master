@@ -30,10 +30,10 @@ class UsersController < ApplicationController
       if @user
         @user.email_activate
         flash[:success]= "Welcome to Scout Master! Your account has now been confirmed."
-        redirect_to root_url
+        redirect_to root_path
       else
         flash[:error] = "Error: User does not exist."
-        redirect_to root_url
+        redirect_to root_path
       end
   end
 
