@@ -7,12 +7,12 @@ class SessionsController < ApplicationController
     if @user && @user.authenticate(params[:password])
       if @user.email_confirmed
         session[:user_id] = @user.id
-        redirect_to root_url, flash: "Logged in!"
+        redirect_to root_path, success: "Logged in!"
       else
         flash[:error] = 'Please activate your account.'
       end
     else
-      redirect_to root_url, flash: "Username or Password was wrong"
+      redirect_to root_path, flash: "Username or Password was wrong"
     end
   end
 
