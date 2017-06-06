@@ -7,7 +7,6 @@ end
 
 ruby '2.4.1'
 gem 'dotenv-rails', group: :development, require: 'dotenv/rails-now'
-gem 'pg', '0.18.4'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.2'
 gem 'bcrypt',         '3.1.11'
@@ -63,6 +62,9 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
+group :production do
+  gem 'pg', '0.18.4'
+end
 
 
 group :test do
