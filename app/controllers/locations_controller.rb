@@ -12,7 +12,9 @@ class LocationsController < ApplicationController
       @locations = Location.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 2)
     end
 
-    @locations = @locations.paginate(:page => params[:page], :per_page => 2)
+    # @locations = Location.all.order(:cached_votes_up => :desc)
+
+    @locations = @locations.paginate(:page => params[:page], :per_page => 6)
 
     @hash = Gmaps4rails.build_markers(@locations) do |location, marker|
       marker.lat location.latitude
@@ -74,18 +76,18 @@ class LocationsController < ApplicationController
     # @location = Location.friendly.find params[:id]
     @location.destroy
     redirect_to locations_path
-
   end
 
   def upvote
       # @location = Location.friendly.find(params[:id])
     current_user.upvotes @location
-    redirect_to locations_path
+    respond_to do |format|
+    format.html {redirect_to :back }
+    end
   end
 
   def downvote
     current_user.downvotes @location
-    redirect_to locations_path
   end
 
   private

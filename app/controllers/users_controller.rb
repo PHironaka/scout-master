@@ -32,6 +32,7 @@ class UsersController < ApplicationController
       flash[:success] = "Registration Completed! Please confirm your email address."
       redirect_to root_path
     else
+      flash[:error] = "Failure: Something went wrong."
       redirect_to new_user_path
     end
   end
