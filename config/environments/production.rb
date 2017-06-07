@@ -87,13 +87,11 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
 
   config.action_mailer.delivery_method = :smtp
-  host = 'https://agile-inlet-60248.herokuapp.com.herokuapp.com'
-  config.action_mailer.default_url_options = { host: host }
+  config.action_mailer.default_url_options = { :host => 'agile-inlet-60248.herokuapp.com' }
   ActionMailer::Base.smtp_settings = {
     :address        => 'smtp.gmail.net',
     :port           => '587',
     :authentication => :plain,
-    :enable_starttls_auto => true,
     :user_name      => ENV['GMAIL_USERNAME'],
     :password       => ENV['GMAIL_PASSWORD'],
     :domain         => ENV["GMAIL_DOMAIN"],
