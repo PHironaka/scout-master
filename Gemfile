@@ -43,7 +43,6 @@ gem 'acts_as_votable'
 gem 'will_paginate', '~> 3.1.0'
 gem 'markdown-rails'
 gem 'meta-tags'
-gem 'devise'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
