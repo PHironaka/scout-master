@@ -84,7 +84,8 @@ Rails.application.configure do
   end
 
   # Do not dump schema after migrations.
-
+ config.action_mailer.raise_delivery_errors = false
+ 
   config.action_mailer.delivery_method = :smtp
   host = 'https://agile-inlet-60248.herokuapp.com.herokuapp.com'
   config.action_mailer.default_url_options = { host: host }
