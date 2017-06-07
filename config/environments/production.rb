@@ -88,13 +88,13 @@ Rails.application.configure do
 
   # email enabled in production
    config.action_mailer.smtp_settings = {
-     address: "smtp.sendgrid.net",
+     address: "smtp.gmail.com",
      port: 587,
-     domain: "heroku.com",
+     domain: ENV["GMAIL_DOMAIN"],
      authentication: "plain",
      enable_starttls_auto: true,
-     user_name: ENV["SENDGRID_USERNAME"],
-     password: ENV["SENDGRID_PASSWORD"]
+     user_name: ENV["GMAIL_USERNAME"],
+     password: ENV["GMAIL_PASSWORD"]
    }
    # ActionMailer Config
    config.action_mailer.default_url_options = { :host => "agile-inlet-60248.herokuapp.com" }
