@@ -83,21 +83,20 @@ Rails.application.configure do
     config.logger = ActiveSupport::TaggedLogging.new(logger)
   end
 
-  # Do not dump schema after migrations.
-  config.action_mailer.perform_deliveries = true
 
+  config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
-  host = 'https://agile-inlet-60248.herokuapp.com.herokuapp.com'
+  host = 'agile-inlet-60248.herokuapp.com.herokuapp.com'
   config.action_mailer.default_url_options = { host: host }
   ActionMailer::Base.smtp_settings = {
-    :address        => 'smtp.gmail.net',
+    :address        => 'smtp.sendgrid.net',
     :port           => '587',
     :authentication => :plain,
-    :enable_starttls_auto => true,
-    :user_name      => ENV['GMAIL_USERNAME'],
-    :password       => ENV['GMAIL_PASSWORD'],
-    :domain         => ENV["GMAIL_DOMAIN"],
+    :user_name      => ENV['SENDGRID_USERNAME'],
+    :password       => ENV['SENDGRID_PASSWORD'],
+    :domain         => 'heroku.com',
     :enable_starttls_auto => true
   }
+  
 
 end
