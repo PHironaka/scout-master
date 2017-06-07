@@ -88,7 +88,7 @@ Rails.application.configure do
 
   # email enabled in production
    config.action_mailer.smtp_settings = {
-     address: "smtp.gmail.com",
+     address: "smtp.sendgrid.net",
      port: 587,
      domain: "heroku.com",
      authentication: "plain",
