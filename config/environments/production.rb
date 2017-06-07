@@ -60,26 +60,6 @@ Rails.application.configure do
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
-  # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.perform_deliveries = true
-  config.action_mailer.delivery_method = :smtp
-  host = 'agile-inlet-60248.herokuapp.com'
-  config.action_mailer.smtp_settings = {
-    address: "smtp.gmail.com",
-    port: 587,
-    domain: ENV["GMAIL_DOMAIN"],
-    authentication: "plain",
-    enable_starttls_auto: true,
-    user_name: ENV["GMAIL_USERNAME"],
-    password: ENV["GMAIL_PASSWORD"]
-   }
-
-   config.action_mailer.default_url_options = { host: host }
-
-  config.action_mailer.perform_caching = false
-
-
 
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
@@ -104,6 +84,23 @@ Rails.application.configure do
     config.logger = ActiveSupport::TaggedLogging.new(logger)
   end
 
+  config.active_record.dump_schema_after_migration = false
+
+  # email enabled in production
+   config.action_mailer.smtp_settings = {
+     address: "smtp.gmail.com",
+     port: 587,
+     domain: "heroku.com",
+     authentication: "plain",
+     enable_starttls_auto: true,
+     user_name: ENV["SENDGRID_USERNAME"],
+     password: ENV["SENDGRID_PASSWORD"]
+   }
+   # ActionMailer Config
+   config.action_mailer.default_url_options = { :host => "agile-inlet-60248.herokuapp.com" }
+   config.action_mailer.delivery_method = :smtp
+   config.action_mailer.perform_deliveries = true
+   config.action_mailer.raise_delivery_errors = false
 
 
 
