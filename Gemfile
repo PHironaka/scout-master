@@ -39,10 +39,13 @@ gem 'friendly_id'
 gem 'geocoder'
 gem 'gmaps4rails'
 gem 'acts_as_votable'
+gem 'acts-as-taggable-on'
 ## Gemfile for Rails 3+, Sinatra, and Merb
 gem 'will_paginate', '~> 3.1.0'
 gem 'markdown-rails'
 gem 'meta-tags'
+gem 'omniauth-facebook'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

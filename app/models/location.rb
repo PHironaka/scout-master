@@ -1,4 +1,5 @@
 class Location < ApplicationRecord
+  # attr_accessible :tag_list
   geocoded_by :address
   after_validation :geocode
   acts_as_votable
@@ -40,6 +41,6 @@ class Location < ApplicationRecord
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
   has_many :comments, dependent: :destroy
 
-
+  acts_as_taggable
 
 end

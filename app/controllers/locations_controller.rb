@@ -12,6 +12,13 @@ class LocationsController < ApplicationController
       @locations = Location.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 2)
     end
 
+    if params[:tag]
+      @locations = Location.all.tagged_with(params[:tag]).order("created_at DESC").paginate(:page => params[:page], :per_page => 4)
+    else
+      @locations = Location.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 4)
+    end
+
+
     # @locations = Location.all.order(:cached_votes_up => :desc)
 
     @locations = @locations.paginate(:page => params[:page], :per_page => 6)
@@ -98,7 +105,7 @@ class LocationsController < ApplicationController
   end
 
     def location_params
-      params.require(:location).permit(:latitude, :longitude,:address, :title, :body, :image, :slug)
+      params.require(:location).permit(:latitude, :longitude,:address, :title, :tag_list, :body, :image, :slug)
     end
 
 end

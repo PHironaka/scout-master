@@ -6,7 +6,7 @@ class User < ApplicationRecord
   before_create :confirmation_token
   has_secure_password
   acts_as_voter
-
+  acts_as_tagger
 
   validates :name,  presence: true, length: { maximum: 50 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'locations#index'
-
+  get 'tags/:tag', to:  'locations#index', as: :tag
 
   get 'errors/not_found'
 
