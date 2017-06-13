@@ -283,7 +283,6 @@ handler.buildMap({ provider: { styles: [
 
 <div class="container">
 
-
 <% @locations.each do |p| %>
 <div class="location-content--index col-md-6">
 <h2><%= link_to p.title, location_path(p) %> </h2>
@@ -294,8 +293,6 @@ handler.buildMap({ provider: { styles: [
 <p>Posted <%= time_ago_in_words(p.created_at) %> ago</p>
 
 
-
-<p>Tags: <%= raw p.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></p>
 
 <%= link_to like_location_path(p), class: "like-btn", method: :put, remote: :true do  %>
 
