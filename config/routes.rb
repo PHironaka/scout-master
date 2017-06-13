@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'locations#index'
   get 'tags/:tag', to:  'locations#index', as: :tag
 
+
   get 'errors/not_found'
 
   get 'errors/internal_server_error'
@@ -11,7 +12,7 @@ Rails.application.routes.draw do
 
   get '/help' => 'static_pages#help'
   get '/about' => 'static_pages#about'
-  get    '/login' => 'sessions#new'
+  get   '/login', :to => 'sessions#new', :as => :login
   get    '/terms' => 'static_pages#terms'
   resources :password_resets,     only: [:new, :create, :edit, :update]
   resources :locations do

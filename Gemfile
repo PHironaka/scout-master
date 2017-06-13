@@ -44,8 +44,8 @@ gem 'acts-as-taggable-on'
 gem 'will_paginate', '~> 3.1.0'
 gem 'markdown-rails'
 gem 'meta-tags'
-gem 'omniauth-facebook'
-
+gem 'omniauth-twitter'
+gem 'devise'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

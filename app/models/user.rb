@@ -1,6 +1,15 @@
 class User < ApplicationRecord
   attr_accessor :remember_token, :activation_token
 
+def self.create_with_omniauth(auth)
+  create! do |user|
+    user.provider = auth["provider"]
+    user.uid = auth["uid"]
+    user.name = auth["info"]["name"]
+  end
+end
+
+
   extend FriendlyId
   friendly_id :name, use: :slugged
   before_create :confirmation_token
@@ -8,7 +17,7 @@ class User < ApplicationRecord
   acts_as_voter
   acts_as_tagger
 
-  validates :name,  presence: true, length: { maximum: 50 }
+  validates :name, presence: true, length: { maximum: 50 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, length: { maximum: 255 },
                     format: { with: VALID_EMAIL_REGEX },
@@ -21,6 +30,7 @@ class User < ApplicationRecord
   has_many :locations
   has_attached_file :avatar,
                     styles: { large: "600x600", medium: "300x300#", thumb: "50x50#" },
+                    default_url: "/images/:style/download.jpg",
                     storage: :s3,
                     url: ":s3_domain_url",
                     path: "/:class/:attachment/:id_partition/:style/:filename",
