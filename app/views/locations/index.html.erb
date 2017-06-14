@@ -6,11 +6,7 @@
 </div>
 
 <script type="text/javascript">
-
-
-
 handler = Gmaps.build('Google');
-
 handler.buildMap({ provider: { styles: [
   {
     "elementType": "geometry",
@@ -270,18 +266,15 @@ handler.buildMap({ provider: { styles: [
     ]
   }
 ]},
-
   internal: {id: 'multi_markers'}}, function(){
   markers = handler.addMarkers(<%=raw @hash.to_json %>);
   handler.bounds.extendWith(markers);
   handler.fitMapToBounds();
 });
-
-
-
 </script>
 
 <div class="container">
+
 
 <% @locations.each do |p| %>
 <div class="location-content--index col-md-6">
@@ -293,6 +286,8 @@ handler.buildMap({ provider: { styles: [
 <p>Posted <%= time_ago_in_words(p.created_at) %> ago</p>
 
 
+
+<p>Tags: <%= raw p.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></p>
 
 <%= link_to like_location_path(p), class: "like-btn", method: :put, remote: :true do  %>
 

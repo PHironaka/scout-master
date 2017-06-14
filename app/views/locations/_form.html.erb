@@ -13,7 +13,7 @@
           <%= p.text_field :address, placeholder: 'Address', class: 'form-control'%>
         </div>
         </div>
-        
+
       <div class="form-group">
           <div class="col-md-6">
       <%= p.text_area :body, placeholder: 'Body', class: 'form-control' %>
@@ -21,7 +21,13 @@
   </div>
 
 
+  <div class="form-group">
+      <div class="col-md-6">
+        <%= p.label :tag_list, "Tags (separated by commas)" %>
+         <%= p.text_field :tag_list %>
 
+           </div>
+</div>
 
         <div class="form-group">
           <div class="col-md-6">

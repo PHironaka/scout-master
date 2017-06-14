@@ -35,7 +35,7 @@ class Location < ApplicationRecord
       where("title LIKE ?", "%#{search}%")
   end
 
-
+ acts_as_taggable
 
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
   has_many :comments, dependent: :destroy

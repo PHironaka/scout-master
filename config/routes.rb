@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   get 'password_resets/new'
   get 'password_resets/edit'
-
+ get 'tags/:tag', to:  'locations#index', as: :tag
   get '/help' => 'static_pages#help'
   get '/about' => 'static_pages#about'
   get    '/login' => 'sessions#new'
