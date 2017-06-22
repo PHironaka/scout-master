@@ -16,6 +16,7 @@ class Location < ApplicationRecord
                     styles: { large: "", medium: "300x300#", thumb: "100x100#" },
                     storage: :s3,
                     url: ":s3_domain_url",
+                    default_url: "placeholder.jpg",
                     path: "/:class/:attachment/:id_partition/:style/:filename",
                     s3_region: ENV["S3_REGION"],
                     s3_credentials: Proc.new { |a| a.instance.s3_credentials }

@@ -77,6 +77,15 @@ input {
     padding: 3px 15px;
 }
 
+.form-control {
+  border: none;
+  outline: none;
+  border-radius: 0;
+  box-shadow: none;
+  background-color: #f7f7f7;
+  height: 50px;
+}
+
 
 
 input[type="submit"] {

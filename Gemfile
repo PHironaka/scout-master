@@ -44,6 +44,7 @@ gem 'will_paginate', '~> 3.1.0'
 gem 'markdown-rails'
 gem 'meta-tags'
 gem 'acts-as-taggable-on'
+gem 'rails_real_favicon'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
