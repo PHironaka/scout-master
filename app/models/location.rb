@@ -15,6 +15,7 @@ class Location < ApplicationRecord
   has_attached_file :image,
                     styles: { large: "", medium: "300x300#", thumb: "100x100#" },
                     storage: :s3,
+                    :s3_protocol => :https,
                     url: ":s3_domain_url",
                     default_url: "placeholder.jpg",
                     path: "/:class/:attachment/:id_partition/:style/:filename",

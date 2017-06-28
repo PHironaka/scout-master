@@ -22,6 +22,7 @@ class User < ApplicationRecord
   has_attached_file :avatar,
                     styles: { large: "600x600", medium: "300x300#", thumb: "50x50#" },
                     storage: :s3,
+                    :s3_protocol => :https,
                     url: ":s3_domain_url",
                     default_url: "oakley.jpg",
                     path: "/:class/:attachment/:id_partition/:style/:filename",
