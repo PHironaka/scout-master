@@ -75,6 +75,9 @@ input {
     color: white;
     border-radius: 5px;
     padding: 3px 15px;
+    @media(max-width:992px){
+      width: 10em;
+    }
 }
 
 .form-control {
