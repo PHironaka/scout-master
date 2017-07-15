@@ -81,6 +81,8 @@
 
       <ul class="nav navbar-nav navbar-right">
             <% if logged_in? %>
+            <!-- <%= link_to 'View Profile', user_path(current_user) %> -->
+
               <%= image_tag current_user.avatar.url(:thumb) %>
 
                 <!-- <li class="dropdown">

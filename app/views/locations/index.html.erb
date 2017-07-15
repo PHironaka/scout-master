@@ -273,14 +273,13 @@ handler.buildMap({ provider: { styles: [
 });
 </script>
 
+<div class="row">
+
 <div class="container">
-
-
 <% @locations.each do |p| %>
 <div class="location-content--index col-md-6">
 <h2><%= link_to p.title, location_path(p) %> </h2>
 <p> Scouted by <%= link_to p.user.name, user_path(p.user) %></p>
-
 <%= image_tag p.image.url(:large) %>
 <p> <%=  p.body %></p>
 <p>Posted <%= time_ago_in_words(p.created_at) %> ago</p>
@@ -304,5 +303,6 @@ handler.buildMap({ provider: { styles: [
     </button>
     <% end %> -->
 </div>
+
 <% end %>
 <%= will_paginate @locations %>

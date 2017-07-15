@@ -42,8 +42,7 @@
   &--post {
     img {
       float: left;
-      max-width: 50px;
-      border-radius: 28px;
+    
       @media(max-width:992px){
         float: none;
       }

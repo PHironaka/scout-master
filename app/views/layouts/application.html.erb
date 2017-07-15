@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= display_meta_tags og: { title: 'Scout Master', image: 'https://www.scoutmaster.pro/assets/placeholder-e57dc2024973000dc4885262ffa69ae1c6750a525eda1ad2f86d5706f1ee7cae.jpg' } %>
     <title>
 
       Scoutmaster
-    <%=' | '  +  if content_for?(:title) then yield(:title) end %>
 
   </title>
     <%= csrf_meta_tags %>
@@ -23,8 +23,9 @@
   </head>
 
     <body>
+       <% unless action_name == "home" %>
       <%= render 'partials/navbar' %>
-
+ <% end %>
 
       <div class="container">
         <% flash.each do |message_type, message| %>

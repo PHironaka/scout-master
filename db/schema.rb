@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170614054355) do
+ActiveRecord::Schema.define(version: 20170711215344) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "content"
@@ -111,6 +111,9 @@ ActiveRecord::Schema.define(version: 20170614054355) do
     t.datetime "reset_sent_at"
     t.boolean  "email_confirmed",     default: false
     t.string   "confirm_token"
+    t.string   "provider"
+    t.string   "uid"
+    t.text     "image"
     t.index ["slug"], name: "index_users_on_slug", unique: true
   end
 

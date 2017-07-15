@@ -17,6 +17,7 @@
  @import "bootstrap";
  @import "footer";
  @import "header";
+ @import "static_pages";
 
  $header-font-family: 'Open Sans', sans-serif;
 
@@ -73,7 +74,7 @@ input {
       width: 16em;
     background: #03a9f4;
     color: white;
-    border-radius: 5px;
+    border-radius: 0;
     padding: 3px 15px;
     @media(max-width:992px){
       width: 10em;
@@ -98,7 +99,7 @@ input[type="submit"] {
   width: 6em;
   background: #03a9f4;
   color: white;
-  border-radius: 5px;
+  border-radius: 0;
   padding: 3px 7px;
 }
 

@@ -45,6 +45,10 @@ gem 'markdown-rails'
 gem 'meta-tags'
 gem 'acts-as-taggable-on'
 gem 'rails_real_favicon'
+gem 'nifty-generators'
+gem 'omniauth-facebook'
+gem 'devise'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -78,3 +82,5 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'mocha', group: :test
