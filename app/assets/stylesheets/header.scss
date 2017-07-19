@@ -79,11 +79,16 @@ color: white;
     border-radius: 0;
     padding:3px;
       margin-right: 0;
+      float: left;
+      display: block;
+
 
 
     a {
       padding: 3px 11px;
-
+      @media(max-width:768px){
+      width: 100%;
+      }
     }
 
     .login {
@@ -131,15 +136,13 @@ background: #03a9f4;
     }
 
 }
-
-.navbar-nav .open .dropdown-menu {
-
-  @media(max-width:768px){
-    background-color: white;
-  }
+.navbar-default .navbar-nav .open .dropdown-menu > li > a {
+  color: white;
 }
 
 .open {
+
+  max-width: 160px;
   h4 {
         margin-right: 10px;
   }
@@ -152,6 +155,11 @@ background: #03a9f4;
   }
 
 
+}
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  background-color: #03a9f4;
+color: #fff;
 }
 
 .search {
