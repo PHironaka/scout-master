@@ -10,7 +10,7 @@
     <%= image_tag comment.user.avatar.url(:thumb) %>
   </div>
 <div class="comment comment-list--content  col-md-10">
-  <h3><%= comment.user.name %></h3>
+  <h3><%= link_to @location.user.name, user_path(@location.user)   %></h3>
   <p><%= comment.content %></p>
     <% if current_user == comment.user %>
       <%= link_to "Delete", [comment.location, comment] , method: :delete %>
