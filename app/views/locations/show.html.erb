@@ -5,7 +5,10 @@
 
 <div class="col-md-6 ">
 <%= image_tag @location.image.url(:large) %>
-
+<div class="map-image ">
+  <h2>Location</h2>
+<%= image_tag "https://maps.googleapis.com/maps/api/staticmap?size=992x992&key=AIzaSyCxJInoQGs969DcTm5qw6tE9Blds8iYbiU&zoom=15&markers=#{@location.latitude}%2C#{@location.longitude}" %>
+</div>
 
 </div>
 
@@ -29,19 +32,17 @@
     <% end %>
 </p>
 
-<div class="map-image">
-  <h2>Location</h2>
-<%= image_tag "https://maps.googleapis.com/maps/api/staticmap?size=992x992&key=AIzaSyCxJInoQGs969DcTm5qw6tE9Blds8iYbiU&zoom=15&markers=#{@location.latitude}%2C#{@location.longitude}" %>
+</div>
+<div class="location-content--post--owner col-md-6">
+  <% if  @location.user == current_user %>
+    <%= link_to 'Edit', edit_location_path(@location) %>
+    <%= link_to 'Delete', location_path(@location), method: :delete %>
+  <% end %>
 </div>
 
-  <div class="location-content--post--owner col-md-12 row">
-    <% if  @location.user == current_user %>
-      <%= link_to 'Edit', edit_location_path(@location) %>
-      <%= link_to 'Delete', location_path(@location), method: :delete %>
-    <% end %>
-  </div>
 
-</div>
+
+
 
 
 

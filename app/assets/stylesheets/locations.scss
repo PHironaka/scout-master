@@ -42,7 +42,7 @@
   &--post {
     img {
       float: left;
-    
+
       @media(max-width:992px){
         float: none;
       }
@@ -163,4 +163,11 @@ padding: 1.2em 0;
     padding-top: 1em;
     border-top: 1px solid ;
   }
+}
+
+.map-image {
+  border-top: 1px solid #eee;
+  margin: 2em 0;
+
+  
 }
