@@ -21,7 +21,7 @@ class LocationsController < ApplicationController
 
     # @locations = Location.all.order(:cached_votes_up => :desc)
 
-    @locations = @locations.paginate(:page => params[:page], :per_page => 4)
+    @locations = @locations.paginate(:page => params[:page], :per_page => 2)
 
     @hash = Gmaps4rails.build_markers(@locations) do |location, marker|
       marker.lat location.latitude
