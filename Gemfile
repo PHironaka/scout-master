@@ -45,10 +45,8 @@ gem 'markdown-rails'
 gem 'meta-tags'
 gem 'acts-as-taggable-on'
 gem 'rails_real_favicon'
-gem 'nifty-generators'
-gem 'omniauth-facebook'
-gem 'devise'
 gem 'sitemap'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

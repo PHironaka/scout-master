@@ -1,5 +1,5 @@
-<%= email_image_tag("download.jpg") %>
 
-Hi <%= @user.name %>,
+Welcome to Scout Master, <%= @user.name %>!
 
-  Thank you for signing up.
+To confirm your registration, please click the following link:
+<%= confirm_email_user_url(@user.confirm_token) %>

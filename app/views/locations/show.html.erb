@@ -1,9 +1,12 @@
 <% provide(:title, @location.title) %>
 <div class="location-content row">
+<div class="container">
 
 
 <div class="col-md-6 ">
 <%= image_tag @location.image.url(:large) %>
+
+
 </div>
 
 <div class="location-content--post col-md-6">
@@ -12,9 +15,9 @@
   <h3>@<%= link_to @location.user.name, user_path(@location.user) %></h3>
 
   <h3><%= @location.address %></h3>
-  <div class="map-image">
-  <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?size=700x400&sensor=false&zoom=16&markers=#{@location.latitude}%2C#{@location.longitude}" %>
-  </div>
+
+
+
   <p> <%= @location.body %></p>
 
 <p>
@@ -26,6 +29,10 @@
     <% end %>
 </p>
 
+<div class="map-image">
+  <h2>Location</h2>
+<%= image_tag "https://maps.googleapis.com/maps/api/staticmap?size=992x992&key=AIzaSyCxJInoQGs969DcTm5qw6tE9Blds8iYbiU&zoom=15&markers=#{@location.latitude}%2C#{@location.longitude}" %>
+</div>
 
   <div class="location-content--post--owner col-md-12 row">
     <% if  @location.user == current_user %>
@@ -38,5 +45,8 @@
 
 
 
-</div>
+
 <%= render 'comments/comment' %>
+</div>
+
+</div>

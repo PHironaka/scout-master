@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  root 'locations#index'
-
+  root 'static_pages#about'
   get 'errors/not_found'
+  get 'search', to: 'search#search'
   get 'errors/internal_server_error'
   get 'password_resets/new'
   get 'password_resets/edit'

@@ -2,15 +2,16 @@ class LocationsController < ApplicationController
 
   #before you log in, you're only authorized to see the index and show
   before_action :authorize, except: [:index, :show]
-  before_action :set_location, only: [:show, :edit, :update, :destroy, :upvote, :downvote, ]
+  before_action :set_location, only: [:show, :edit, :update, :destroy, :upvote, :downvote ]
 
   def index
 
-    if params[:search]
-      @locations = Location.search(params[:search])
-    else
-      @locations = Location.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 2)
-    end
+    if params[:query].present?
+         @locations = Location.search(params[:query], page: params[:page])
+       else
+         @locations = Location.all.page params[:page]
+       end
+
 
     if params[:tag]
     @locations = Location.all.tagged_with(params[:tag]).order("created_at DESC").paginate(:page => params[:page], :per_page => 4)
@@ -20,7 +21,7 @@ class LocationsController < ApplicationController
 
     # @locations = Location.all.order(:cached_votes_up => :desc)
 
-    @locations = @locations.paginate(:page => params[:page], :per_page => 3)
+    @locations = @locations.paginate(:page => params[:page], :per_page => 4)
 
     @hash = Gmaps4rails.build_markers(@locations) do |location, marker|
       marker.lat location.latitude

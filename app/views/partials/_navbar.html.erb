@@ -11,7 +11,7 @@
       <a class="navbar-brand" href="/">
 
         <svg  viewBox="0 0 233.22 25.78" id="my-svg">
-  <defs>
+    <defs>
       <style>
           .cls-1 {
               isolation: isolate;
@@ -21,9 +21,9 @@
               fill: #fff;
           }
       </style>
-  </defs>
-  <title>Asset 1</title>
-  <g id="Layer_2" data-name="Layer 2">
+    </defs>
+    <title>Asset 1</title>
+    <g id="Layer_2" data-name="Layer 2">
       <g id="Layer_1-2" data-name="Layer 1">
           <g id="User-Profile">
               <g id="Desktop">
@@ -45,14 +45,14 @@
               </g>
           </g>
       </g>
-  </g>
-</svg>
+    </g>
+    </svg>
 
       </a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <div class="collapse navbar-collapse row" id="bs-example-navbar-collapse-1">
 
 <!--
 
@@ -66,20 +66,20 @@
       </form> -->
 
 
-      <div class="location-index col-sm-6 search">
+      <div class="location-index search <% if logged_in? %>col-sm-6<% else %>col-sm-5<% end %>  ">
 
         <!-- <h2>Search for your location.</h2> -->
 
         <%= form_tag locations_path, method: :get do %>
           <p>
-            <%= text_field_tag :search, params[:search], placeholder: "Look for your spot!" %>
+            <%= text_field_tag :title, params[:title], placeholder: "Look for your spot!" %>
             <%= submit_tag "Search", name: nil %>
           </p>
         <% end %>
 
       </div>
 
-      <ul class="nav navbar-nav navbar-right">
+      <div class="nav navbar-nav   navbar-right <% if logged_in? %> <% else %>col-sm-4<% end %> ">
             <% if logged_in? %>
             <!-- <%= link_to 'View Profile', user_path(current_user) %> -->
 

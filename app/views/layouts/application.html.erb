@@ -9,7 +9,7 @@
     <title>
 
       Scoutmaster
-
+  <%=' | '  +  if content_for?(:title) then yield(:title) end %>
   </title>
     <%= csrf_meta_tags %>
     <link href="https://fonts.googleapis.com/css?family=Ek+Mukta:300|Open+Sans:800" rel="stylesheet">
@@ -17,7 +17,7 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= render 'partials/favicon' %>
-
+    <meta name="google-site-verification" content="DKmp-m3yU8twSkGY_5NWmygjuoIO3oiStR1X_nfzYOA" />
     <style>.async-hide { opacity: 0 !important} </style>
     <script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
     h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
@@ -56,9 +56,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
        <% unless action_name == "home" %>
       <%= render 'partials/navbar' %>
- <% end %>
+      <% end %>
 
-      <div class="container">
         <% flash.each do |message_type, message| %>
         <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
 
@@ -66,7 +65,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <% end %>
         <%= yield %>
         <%= render 'partials/footer' %>
-      </div>
 
 <script src="https://cdn.jsdelivr.net/jquery/3.2.1/jquery.min.map" charset="utf-8"></script>
 

@@ -1,4 +1,5 @@
 <% provide(:title, @user.name) %>
+<div class="container">
 
 <div class="col-sm-5 user ">
 
@@ -9,10 +10,15 @@
 <h3>Bio</h3>
 <p><%= @user.summary %></p>
 
+
 <h3>Portfolio</h3>
+<% if @user.portfolio? %>
 <a href="http://<%= @user.portfolio%>" target="_blank"><%= @user.portfolio%></a>
+<% end %>
 
 <h3>Social</h3>
+<% if @user.socialtwo? %>
+
 <a class="social" href="https://instagram.com/<%= @user.instagram%>" target="_blank">
   <svg version="1.1" id="Logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" width="20px" height="20px" style="enable-background:new 0 0 512 512;" xml:space="preserve">
     <g>
@@ -46,10 +52,15 @@
       </svg>
 
 </a>
+  <% else %>
 
+  <% end %>
 
 <h3>Hometown</h3>
+<% if @user.hometown? %>
 <p><%= @user.hometown %></p>
+<% end %>
+
 <% if current_user == @user %>
 <%= link_to 'Edit Profile', edit_user_path(@user) %>
 <% end %>
@@ -74,4 +85,5 @@
 
 
 <% end %>
+</div>
 </div>

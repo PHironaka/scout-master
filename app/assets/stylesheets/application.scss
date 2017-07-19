@@ -38,7 +38,7 @@ h3, h4 {
 }
 
 
-
+#multi_markers.map-container .gm-style p {font-family: 'Ek Mukta', sans-serif; line-height: 1;}
 
 img {
   max-width: 100%;
@@ -101,6 +101,10 @@ input[type="submit"] {
   color: white;
   border-radius: 0;
   padding: 3px 7px;
+}
+
+#location_body {
+  min-height: 400px;
 }
 
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
