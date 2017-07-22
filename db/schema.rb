@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170711215344) do
+ActiveRecord::Schema.define(version: 20170720055056) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "content"
@@ -64,6 +64,19 @@ ActiveRecord::Schema.define(version: 20170711215344) do
     t.index ["cached_weighted_total"], name: "index_locations_on_cached_weighted_total"
     t.index ["slug"], name: "index_locations_on_slug", unique: true
     t.index ["user_id"], name: "index_locations_on_user_id"
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.string   "picture"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.integer  "location_id"
+    t.string   "pic"
+    t.integer  "user_id"
   end
 
   create_table "taggings", force: :cascade do |t|

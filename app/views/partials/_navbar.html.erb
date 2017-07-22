@@ -72,7 +72,7 @@
 
         <%= form_tag locations_path, method: :get do %>
           <p>
-            <%= text_field_tag :title, params[:title], placeholder: "Look for your spot!" %>
+            <%= text_field_tag :search, params[:title], placeholder: "Look for your spot!" %>
             <%= submit_tag "Search", name: nil %>
           </p>
         <% end %>

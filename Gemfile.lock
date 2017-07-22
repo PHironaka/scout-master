@@ -143,6 +143,7 @@ GEM
       metaclass (~> 0.0.1)
     multi_json (1.12.1)
     nenv (0.3.0)
+    nested_form (0.3.2)
     netrc (0.11.0)
     nio4r (2.1.0)
     nokogiri (1.8.0)
@@ -278,6 +279,7 @@ DEPENDENCIES
   meta-tags
   minitest-reporters (= 1.1.9)
   mocha
+  nested_form
   paperclip (~> 5.0.0)
   pg (= 0.18.4)
   puma (~> 3.0)

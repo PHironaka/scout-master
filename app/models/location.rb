@@ -38,10 +38,11 @@ class Location < ApplicationRecord
    acts_as_taggable
 
    def self.search(search)
-     if search
-       find( :conditions => ['name LIKE ?', "%#{search}%"])
-
-     end
+    if search
+        where("LOWER(title) LIKE ?", "%#{search.to_s.downcase}%")
+      else
+      all
+    end
    end
 
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/

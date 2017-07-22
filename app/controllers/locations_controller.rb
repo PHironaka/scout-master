@@ -12,6 +12,12 @@ class LocationsController < ApplicationController
          @locations = Location.all.page params[:page]
        end
 
+       if params[:search]
+@locations = Location.search(params[:search]).order("created_at DESC")
+   else
+  @locations = Location.all.order('created_at DESC')
+  end
+
 
     if params[:tag]
     @locations = Location.all.tagged_with(params[:tag]).order("created_at DESC").paginate(:page => params[:page], :per_page => 4)
@@ -21,7 +27,7 @@ class LocationsController < ApplicationController
 
     # @locations = Location.all.order(:cached_votes_up => :desc)
 
-    @locations = @locations.paginate(:page => params[:page], :per_page => 2)
+    @locations = @locations.paginate(:page => params[:page], :per_page => 4)
 
     @hash = Gmaps4rails.build_markers(@locations) do |location, marker|
       marker.lat location.latitude
@@ -105,7 +111,7 @@ class LocationsController < ApplicationController
   end
 
     def location_params
-      params.require(:location).permit(:latitude, :longitude,:address, :title, :tag_list, :body, :image, :slug)
+      params.require(:location).permit(:latitude, :longitude,:address, :title, :tag_list, :body, :search, :image, :slug)
     end
 
 end

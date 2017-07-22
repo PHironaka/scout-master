@@ -46,6 +46,7 @@ gem 'meta-tags'
 gem 'acts-as-taggable-on'
 gem 'rails_real_favicon'
 gem 'sitemap'
+gem "nested_form"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

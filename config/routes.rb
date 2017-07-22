@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   root 'static_pages#about'
   get 'errors/not_found'
-  get 'search', to: 'search#search'
   get 'errors/internal_server_error'
   get 'password_resets/new'
   get 'password_resets/edit'
@@ -10,15 +9,19 @@ Rails.application.routes.draw do
   get '/about' => 'static_pages#about'
   get    '/login' => 'sessions#new'
   get    '/terms' => 'static_pages#terms'
+   get '/locations' => 'locations#index'
+
+  resources :locations do
+    resources :photos
+    resources :comments
+        member do
+          put "like" => "locations#upvote"
+          put "dislike" => "locations#downvote"
+        end
+  end
 
   resources :password_resets,     only: [:new, :create, :edit, :update]
-  resources :locations do
-  resources :comments
-    member do
-      put "like" => "locations#upvote"
-      put "dislike" => "locations#downvote"
-    end
-  end
+
 
   delete '/logout' => 'sessions#destroy', as: :logout
   resources :sessions, only: [:new, :create]
