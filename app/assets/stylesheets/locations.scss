@@ -168,6 +168,14 @@ padding: 1.2em 0;
 .map-image {
   border-top: 1px solid #eee;
   margin: 2em 0;
+}
 
-  
+a[href^="http://maps.google.com/maps"]{display:none !important}
+a[href^="https://maps.google.com/maps"]{display:none !important}
+
+.gmnoprint a, .gmnoprint span, .gm-style-cc {
+    display:none;
+}
+.gmnoprint div {
+    background:none !important;
 }
