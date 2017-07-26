@@ -20,6 +20,7 @@
 //= require_tree .
 
 
+
 function initialize() {
     var mapOptions = {
         zoom: 9,

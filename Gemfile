@@ -51,6 +51,7 @@ gem 'redcarpet'
 gem 'pygments.rb'
 gem 'md_simple_editor'
 gem "font-awesome-rails"
+gem 'pg_search'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

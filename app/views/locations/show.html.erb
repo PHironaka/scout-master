@@ -15,13 +15,14 @@
 <div class="location-content--post col-md-6">
   <!-- <%= image_tag @location.user.avatar.url(:thumb) %> -->
   <h2> <%= @location.title %></h2>
+  <%= image_tag @location.user.avatar.url , class: "image-avatar "%>
   <h3>@<%= link_to @location.user.name, user_path(@location.user) %></h3>
 
   <h3><%= @location.address %></h3>
 
 
 
-  <p> <%= markdown @location.body %></p>
+  <%= markdown @location.body %>
 
   <%= link_to like_location_path(@location), class: "like-btn", method: :put, remote: :true do  %>
     <button type="button" class="button button-info" aria-label="Left Align" name="button">

@@ -74,6 +74,10 @@ h3 {
 
 a {
   color: #333;
+  &:hover {
+    text-decoration: none;
+
+  }
 }
 
 p {
@@ -146,6 +150,20 @@ svg {
 .pagination {
   clear: both;
   float: left;
+  width: 100%;
+  text-align: center;
+
+  a {
+    border: 2px solid #2196f3;
+  padding: 7px;
+  border-radius: 9px;
+  color: #2196F3;
+
+  &:hover {
+    background-color: #2196f3;
+    color: #fff;
+  }
+  }
 }
 
 
