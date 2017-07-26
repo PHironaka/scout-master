@@ -73,7 +73,7 @@
 <div class="user--locations ">
 <%= image_tag p.image.url(:large) %>
 <h2><%= link_to p.title, location_path(p) %> </h2>
-<p><%= p.body %> </p>
+  <p> <%= markdown p.body %></p>
 
 
 

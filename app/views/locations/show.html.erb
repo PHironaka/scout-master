@@ -21,7 +21,7 @@
 
 
 
-  <p> <%= @location.body %></p>
+  <p> <%= markdown @location.body %></p>
 
 <p>
   <%= link_to like_location_path(@location), class: "like-btn", method: :put, remote: :true do  %>

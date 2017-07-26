@@ -47,7 +47,10 @@ gem 'acts-as-taggable-on'
 gem 'rails_real_favicon'
 gem 'sitemap'
 gem "nested_form"
-
+gem 'redcarpet'
+gem 'pygments.rb'
+gem 'md_simple_editor'
+gem "font-awesome-rails"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

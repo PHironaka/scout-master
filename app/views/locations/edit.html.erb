@@ -7,24 +7,28 @@
 <%= form_for @location, html: { multipart: true, class: 'new_location form-horizontal' }  do |p| %>
   <fieldset>
     <div class="form-group">
-      <div class="col-md-5">
+      <div class="col-md-8">
     <%= p.text_field :title, placeholder: 'Title', class: 'form-control' %>
     </div>
       </div>
     <div class="form-group">
-        <div class="col-md-5">
-    <%= p.text_area :body, placeholder: 'Body', class: 'form-control' %>
-      </div>
+      <div class="col-md-8">
+        <%= form_for @location do |f| %>
+  <%= md_simple_editor  do %>
+      <%= f.text_area :body %>
+  <% end %>
+<% end %>
+    </div>
 </div>
 
 <div class="form-group">
-  <div class="col-md-5">
+  <div class="col-md-8">
   <%= p.text_area :address, placeholder: 'Address', class: 'form-control'%>
 </div>
 </div>
 
 <div class="form-group">
-    <div class="col-md-6">
+    <div class="col-md-8">
       <%= p.label :tag_list, "Tags (separated by commas)" %>
        <%= p.text_area :tag_list, class: 'form-control' %>
 
@@ -33,12 +37,12 @@
 
 
       <div class="form-group">
-        <div class="col-md-5">
+        <div class="col-md-8">
         <%= p.file_field :image, class: 'form-control' %>
       </div>
       </div>
 <div class="form-group">
-  <div class="col-md-5">
+  <div class="col-md-8">
     <%= p.submit 'Update Location', class: 'btn btn-success' %>
       </div>
         </div>

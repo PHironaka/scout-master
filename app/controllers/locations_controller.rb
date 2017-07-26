@@ -38,7 +38,10 @@ class LocationsController < ApplicationController
                  :width   => 48,
                  :height  => 48
                 })
-      marker.infowindow "<h4><a href='/locations/#{location.friendly_id}'>  #{location.title} </a></h4><p> #{location.body} </p> "
+      marker.infowindow "
+      <h4><a href='/locations/#{location.friendly_id}'>
+      #{location.title} </a></h4>
+      <p> #{location.address} </p> "
     end
   end
 

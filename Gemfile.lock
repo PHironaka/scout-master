@@ -81,6 +81,8 @@ GEM
     erubis (2.7.0)
     execjs (2.7.0)
     ffi (1.9.18)
+    font-awesome-rails (4.7.0.2)
+      railties (>= 3.2, < 5.2)
     formatador (0.2.5)
     friendly_id (5.2.1)
       activerecord (>= 4.0.0)
@@ -124,6 +126,9 @@ GEM
     markdown-rails (0.2.1)
       rails
       rdiscount (>= 1.6.8, < 2.0)
+    md_simple_editor (0.2.4)
+      font-awesome-rails
+      redcarpet (~> 3.0)
     meta-tags (2.4.1)
       actionpack (>= 3.2.0, < 5.2)
     metaclass (0.0.4)
@@ -163,6 +168,8 @@ GEM
       method_source (~> 0.8.1)
       slop (~> 3.4)
     puma (3.9.1)
+    pygments.rb (1.1.2)
+      multi_json (>= 1.0.0)
     rack (2.0.3)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -203,6 +210,7 @@ GEM
     rb-inotify (0.9.8)
       ffi (>= 0.5.0)
     rdiscount (1.6.8)
+    redcarpet (3.4.0)
     rest-client (2.0.2)
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
@@ -267,6 +275,7 @@ DEPENDENCIES
   byebug (= 9.0.0)
   coffee-rails (~> 4.2)
   dotenv-rails
+  font-awesome-rails
   friendly_id
   geocoder
   gmaps4rails
@@ -276,6 +285,7 @@ DEPENDENCIES
   jquery-rails
   listen (~> 3.0.5)
   markdown-rails
+  md_simple_editor
   meta-tags
   minitest-reporters (= 1.1.9)
   mocha
@@ -283,9 +293,11 @@ DEPENDENCIES
   paperclip (~> 5.0.0)
   pg (= 0.18.4)
   puma (~> 3.0)
+  pygments.rb
   rails (~> 5.0.2)
   rails-controller-testing (= 0.1.1)
   rails_real_favicon
+  redcarpet
   sass-rails (~> 5.0)
   sitemap
   spring

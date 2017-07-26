@@ -12,6 +12,10 @@
  *
  *= require_tree .
  *= require_self
+ *= require md_simple_editor
+ *= require font-awesome
+
+
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
@@ -168,4 +172,21 @@ svg {
 
 .forgot-password {
   margin: 15px;
+}
+
+#md-text #location_body {
+  width: 100%;
+  background-color: #f7f7f7;
+  border: none;
+}
+
+#location_tag_list {
+  background-color: #f7f7f7;
+  color: #222;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #2196f3;
+    border: none;
 }
