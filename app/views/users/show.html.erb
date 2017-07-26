@@ -79,9 +79,16 @@
 
 <% if current_user == p.user %>
 
-<%= link_to 'Delete', p, method: :delete %>
-  <% end %>
+<div class="location-content--post--users col-md-6">
+    <%= link_to 'Delete', p, method: :delete %>
 </div>
+  <% end %>
+
+</div>
+
+
+
+
 
 
 <% end %>
