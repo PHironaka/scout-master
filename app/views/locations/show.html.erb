@@ -23,14 +23,12 @@
 
   <p> <%= markdown @location.body %></p>
 
-<p>
   <%= link_to like_location_path(@location), class: "like-btn", method: :put, remote: :true do  %>
     <button type="button" class="button button-info" aria-label="Left Align" name="button">
       <span class="glyphicon glyphicon glyphicon-heart " aria-hidden="true"></span>
       <span class="badge"><%= @location.get_upvotes.size %> likes</span>
     </button>
     <% end %>
-</p>
 
 </div>
 <div class="location-content--post--owner col-md-6">
