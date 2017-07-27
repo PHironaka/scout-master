@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
+    <title>Map-Icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Map-Icon" fill-rule="nonzero" fill="#1081E0">
+            <g id="placeholder" transform="translate(8.609693, 0.262271)">
+                <path d="M29.6799498,5.09190002 L29.6799498,5.09190002 C22.8907498,-1.69730001 11.8824513,-1.69730001 5.09229475,5.09190002 L5.09229475,5.09190002 C-1.02544592,11.2096407 -1.71412217,22.7287075 3.47773155,29.6508602 L17.3861223,49.7372508 L31.294513,29.6508602 C36.4863668,22.7287075 35.7976905,11.2096407 29.6799498,5.09190002 Z M18.173401,22.955875 C15.0035773,22.955875 12.4344323,20.38673 12.4344323,17.2169062 C12.4344323,14.0470825 15.0035773,11.4779375 18.173401,11.4779375 C21.3432247,11.4779375 23.9123698,14.0470825 23.9123698,17.2169062 C23.9123698,20.38673 21.3432247,22.955875 18.173401,22.955875 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

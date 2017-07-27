@@ -15,7 +15,7 @@
 <div class="location-content--post col-md-6">
   <!-- <%= image_tag @location.user.avatar.url(:thumb) %> -->
   <h2> <%= @location.title %></h2>
-  <%= image_tag @location.user.avatar.url , class: "image-avatar "%>
+  <%= image_tag @location.user.avatar.url , class: "image-avatar__show "%>
   <h3>@<%= link_to @location.user.name, user_path(@location.user) %></h3>
 
   <h3><%= @location.address %></h3>

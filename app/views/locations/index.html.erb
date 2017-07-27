@@ -156,7 +156,7 @@ handler.buildMap(
 <div class="location-content--index col-md-6">
 <h2><%= link_to p.title, location_path(p) %> </h2>
 <%= image_tag p.user.avatar.url , class: "image-avatar "%>
-<p> Scouted by <%= link_to p.user.name, user_path(p.user) %></p>
+<p class="location-content--index--scouted-by"> Scouted by <%= link_to p.user.name, user_path(p.user) %></p>
 
 <%= image_tag p.image.url(:large) %>
 <p> <%=   p.body %></p>

@@ -34,9 +34,12 @@ class LocationsController < ApplicationController
       marker.lng location.longitude
       marker.infowindow location.title
       marker.picture({
-                 :url => "https://maxcdn.icons8.com/Color/PNG/48/Maps/user_location-48.png",
-                 :width   => 48,
-                 :height  => 48
+
+
+
+                 :url => ActionController::Base.helpers.asset_path("map-Icon.svg"),
+                 :width   => 50,
+                 :height  => 50
                 })
       marker.infowindow "
       <h4><a href='/locations/#{location.friendly_id}'>
