@@ -6,17 +6,7 @@ class LocationsController < ApplicationController
 
   def index
 
-    if params[:query].present?
-         @locations = Location.search(params[:query], page: params[:page])
-       else
-         @locations = Location.all.page params[:page]
-       end
 
-       if params[:search]
-@locations = Location.search(params[:search]).order("created_at DESC")
-   else
-  @locations = Location.all.order('created_at DESC')
-  end
 
 
     if params[:tag]
@@ -58,8 +48,8 @@ class LocationsController < ApplicationController
 
   def new
     @location = Location.new
-
   end
+  
 
   def create
     #THIS gets run first

@@ -209,3 +209,13 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
     margin: 10px 10px 0px 0;
   }
 }
+
+.tag-list {
+  a {
+    background-color: #2196f3;
+color: white;
+padding: 3px 12px;
+border-radius: 10px;
+margin: 0 6px 0 0px;
+  }
+}

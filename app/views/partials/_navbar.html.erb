@@ -70,11 +70,14 @@
 
         <!-- <h2>Search for your location.</h2> -->
 
-        <%= form_tag( locations_path, method: :get) do %>
+
+
+        <%= form_tag locations_path, method: :get do %>
           <p>
-            <%= text_field_tag :title, params[:query], placeholder: "Look for your spot!" %>
-            <%= submit_tag 'Search', name: nil %>
-          </p>
+            <%= text_field_tag :tag,params[:tag], placeholder: "Search Tags" %>
+            <%= submit_tag "Search", :title => nil %>
+
+
         <% end %>
 
       </div>

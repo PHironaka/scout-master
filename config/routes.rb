@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get '/about' => 'static_pages#about'
   get    '/login' => 'sessions#new'
   get    '/terms' => 'static_pages#terms'
-   get '/locations' => 'locations#index'
+  get '/locations' => 'locations#index'
 
   resources :locations do
     resources :photos

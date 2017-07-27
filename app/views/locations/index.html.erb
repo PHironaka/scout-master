@@ -163,9 +163,9 @@ handler.buildMap(
 
 <p>Posted <%= time_ago_in_words(p.created_at) %> ago</p>
 
-
-
-<p>Tags: <%= raw p.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></p>
+<div class="tag-list">
+  <%= raw p.tag_list.map { |t| link_to t , tag_path(t) }.join(' ') %>
+</div>
 
 <%= link_to like_location_path(p), class: "like-btn", method: :put, remote: :true do  %>
 

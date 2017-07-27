@@ -3,7 +3,6 @@ class Location < ApplicationRecord
   after_validation :geocode
   acts_as_votable
   extend FriendlyId
-
   friendly_id :title, use: :slugged
 
   def should_generate_new_friendly_id?
@@ -36,15 +35,14 @@ class Location < ApplicationRecord
   def gmaps4rails_address
    address
   end
-  include PgSearch
-  multisearchable :against => [:title]
+
 
    acts_as_taggable
 
-  #  def self.search(search)
-  #    paginate :per_page => 5, :page => page,
-  #           :conditions => ['search like ?', "%#{search}%"], :order => 'name'
-  #  end
+   def self.search(search)
+     where("tag_list LIKE", "%#{search}")
+   end
+
 
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
   has_many :comments, dependent: :destroy
