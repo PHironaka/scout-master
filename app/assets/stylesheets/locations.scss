@@ -213,9 +213,10 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
 
 .image-avatar {
   float: left;
-  max-width: 40px;
-  border-radius: 28px;
-  margin: 0 0 1em 0;
+max-width: 45px;
+border-radius: 26px;
+margin: 0 0 1em 0;
+height: 45px;
   &__show {
     float: left;
     max-width: 40px;

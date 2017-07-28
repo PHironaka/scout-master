@@ -63,6 +63,8 @@
 
 <% if current_user == @user %>
 <%= link_to 'Edit Profile', edit_user_path(@user) %>
+<%= link_to "delete", @user, method: :delete,
+                                  data: { confirm: "You sure?" } %>
 <% end %>
 </div>
 
