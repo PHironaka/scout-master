@@ -15,6 +15,8 @@ class LocationsController < ApplicationController
     @locations = Location.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 4)
   end
 
+
+
     # @locations = Location.all.order(:cached_votes_up => :desc)
 
     @locations = @locations.paginate(:page => params[:page], :per_page => 4)
@@ -49,7 +51,7 @@ class LocationsController < ApplicationController
   def new
     @location = Location.new
   end
-  
+
 
   def create
     #THIS gets run first

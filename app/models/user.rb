@@ -7,7 +7,11 @@ class User < ApplicationRecord
   has_secure_password
   acts_as_voter
   acts_as_tagger
-
+  acts_as_follower
+  acts_as_followable
+  has_many :folllowers
+  has_many :following
+  
   validates :name,  presence: true, length: { maximum: 50 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, length: { maximum: 255 },

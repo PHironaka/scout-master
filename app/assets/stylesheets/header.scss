@@ -138,6 +138,10 @@ background: #03a9f4;
 }
 .navbar-default .navbar-nav .open .dropdown-menu > li > a {
   color: white;
+
+  &:hover {
+    background: none; 
+  }
 }
 
 .open {

@@ -5,6 +5,7 @@
 
 <div class="col-md-6 ">
 <%= image_tag @location.image.url(:large) %>
+
 <div class="map-image ">
   <h2>Location</h2>
 <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?size=992x992&key=AIzaSyCxJInoQGs969DcTm5qw6tE9Blds8iYbiU&zoom=15&markers=#{@location.latitude}%2C#{@location.longitude}" %>
@@ -15,7 +16,10 @@
 <div class="location-content--post col-md-6">
   <!-- <%= image_tag @location.user.avatar.url(:thumb) %> -->
   <h2> <%= @location.title %></h2>
-  <%= image_tag @location.user.avatar.url , class: "image-avatar__show "%>
+  <div class="location-content--image-avatar">
+
+  <%= image_tag @location.user.avatar.url , class: "image "%>
+  </div>
   <h3>@<%= link_to @location.user.name, user_path(@location.user) %></h3>
 
   <h3><%= @location.address %></h3>

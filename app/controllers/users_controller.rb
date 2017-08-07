@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authorize, only: [:show]
+  before_action :authorize, only: [:show, :follow, :unfollow]
 
   def index
       @users = User.all
@@ -9,6 +9,13 @@ class UsersController < ApplicationController
 
   def show
     @user = User.friendly.find(params[:id])
+    # @user.following_users.collect{|u| u.locations}
+    # @favoriteLocation = Location.where(user_id: current_user.all_follows all_following.pluck(:id))
+
+    @following = current_user.all_following
+    @followposts = @following.each do |f|
+        f.friendly_id
+      end
   end
 
   def new
@@ -59,6 +66,37 @@ class UsersController < ApplicationController
     @user.destroy
     redirect_to users_path
   end
+
+  def follow
+    @user = User.friendly.find(params[:id])
+  respond_to do |format|
+    if current_user
+      if current_user == @user
+        format.html { redirect_to current_user, alert: "You can't follow yourself." }
+      else
+        current_user.follow(@user)
+        format.html { redirect_to @user, notice: "You are now following #{@user.name}." }
+        format.js
+        # RecommenderMailer.new_follower(@user).deliver if @user.notify_new_follower
+      end
+    else
+      format.html { redirect_to root_path, alert: "You must <a href='/users/sign_in'>login</a> to follow #{@user.name}.".html_safe }
+    end
+   end
+  end
+
+def unfollow
+  @user = User.friendly.find(params[:id])
+  respond_to do |format|
+    if current_user
+      current_user.stop_following(@user)
+      format.html { redirect_to root_path, notice: "You are no longer following #{@user.name}." }
+      format.js
+    else
+      format.html { redirect_to @user, alert: "You must <a href='/users/sign_in'>login</a> to unfollow #{@user.name}.".html_safe }
+    end
+  end
+end
 
   private
   def user_params

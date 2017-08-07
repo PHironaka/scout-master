@@ -223,3 +223,14 @@ svg {
   display: inline-block;
   margin-top: 20px;
 }
+
+.follow-btn {
+  border: 2px solid #2196f3;
+  color: #2196f3;
+  &:hover, &:visited{
+    background-color: #2196f3;
+    color: white;
+  }
+
+
+}

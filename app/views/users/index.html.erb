@@ -5,20 +5,20 @@
 
 <% @users.each do |p| %>
 
-<div class="user-content--users col-sm-12 ">
+<div class="user-content--users col-md-12 ">
 
-    <div class="user-content--users--image col-sm-3">
+    <div class="user-content--users--image col-md-3">
 
 
 
       <%= image_tag p.avatar.url(:medium)  %>
 
     </div>
-<div class="user-content--users--name col-sm-5">
+<div class="user-content--users--name col-md-5">
     <h2><%= link_to p.name, user_path(p) %> </h2>
     <p> <%= p.summary %></p>
 </div>
-<div class="user-content--users--name col-sm-3">
+<div class="user-content--users--name col-md-3">
     <h2> <%= p.hometown %></h2>
 </div>
 </div>

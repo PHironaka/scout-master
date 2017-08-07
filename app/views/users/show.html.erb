@@ -1,14 +1,29 @@
 <% provide(:title, @user.name) %>
 <div class="container">
 
-<div class="col-sm-5 user ">
+<div class="col-sm-4 user ">
+
+
 
 
 
 <%= image_tag @user.avatar.url %>
 <h1> <%= @user.name %></h1>
+<% if @user.id != current_user.id %>
+              <% if current_user.following?(@user) %>
+                <%= link_to "Unfollow", unfollow_user_path(@user), :class => 'btn follow-btn btn-sm-6  unfollow connect', remote: true %>
+                <!-- <button class="btn btn-bookloop btn-sm pull-right message-user" data-toggle="modal" data-target="#newMessageModal">
+                  <img src="https://s3.amazonaws.com/bklp/message_icon_new.png">
+                </button> -->
+              <% else %>
+                <%= link_to "Follow", follow_user_path(@user), :class => 'btn  follow-btn btn-sm-6 follow connect', remote: true %>
+              <% end %>
+            <% end %>
 <h3>Bio</h3>
 <p><%= @user.summary %></p>
+
+
+
 
 
 <h3>Portfolio</h3>
@@ -61,6 +76,19 @@
 <p><%= @user.hometown %></p>
 <% end %>
 
+<p><%= @user.followers_count %> Followers</p>
+<!-- <p><%= @user.all_following.pluck(:name).to_sentence %></p> -->
+
+<% @user.followers.each do |p| %>
+<div class="user-show--followers">
+
+  <p><%=   p.name  %></p>
+  <%= image_tag p.avatar.url %>
+</div>
+
+<% end %>
+
+
 <% if current_user == @user %>
 <%= link_to 'Edit Profile', edit_user_path(@user) %>
 <%= link_to "delete", @user, method: :delete,
@@ -68,7 +96,8 @@
 <% end %>
 </div>
 
-<div class="col-sm-7 user-locations--index">
+<div class="col-sm-8 user-locations--index">
+
 
 <h2><%= @user.name %>'s locations <%= pluralize(@user.locations.count, "") %> </h2>
 <% @user.locations.each do |p| %>

@@ -51,6 +51,7 @@ gem 'redcarpet'
 gem 'pygments.rb'
 gem 'md_simple_editor'
 gem "font-awesome-rails"
+gem 'acts_as_follower', github: 'tcocca/acts_as_follower', branch: 'master'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
