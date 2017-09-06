@@ -19,6 +19,13 @@
                 <%= link_to "Follow", follow_user_path(@user), :class => 'btn  follow-btn btn-sm-6 follow connect', remote: true %>
               <% end %>
             <% end %>
+
+
+            <% if current_user == @user %>
+              <%= link_to 'Edit Profile', edit_user_path(@user) %>
+              <%= link_to "delete", @user, method: :delete,
+              data: { confirm: "You sure?" } %>
+              <% end %>
 <h3>Bio</h3>
 <p><%= @user.summary %></p>
 
@@ -80,12 +87,12 @@
 
 
 <p><%= @user.followers_count %> Followers</p>
-<!-- <p><%= @user.all_following.pluck(:name).to_sentence %></p> -->
 
 <% @user.followers.each do |p| %>
 <div class="user-show--followers">
-  <p><%=   p.name  %></p>
-  <%= image_tag p.avatar.url %>
+  <p><%= link_to p.name, user_path(p) %> </p>
+  <%=  image_tag p.avatar.url %>
+</a>
 </div>
 
 <% end %>
@@ -93,19 +100,11 @@
 
 
 
-<% if current_user == @user %>
-<div class="user-show--edit">
-  <%= link_to 'Edit Profile', edit_user_path(@user) %>
-  <%= link_to "delete", @user, method: :delete,
-                                    data: { confirm: "You sure?" } %>
-  <% end %>
 </div>
 
-</div>
+
 
 <div class="col-sm-8 user-locations--index">
-
-
 <h2><%= @user.name %>'s locations <%= pluralize(@user.locations.count, "") %> </h2>
 <% @user.locations.each do |p| %>
 <div class="user--locations ">
@@ -138,5 +137,6 @@
 
 
 <% end %>
+</div>
 </div>
 </div>
