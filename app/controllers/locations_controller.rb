@@ -9,11 +9,11 @@ class LocationsController < ApplicationController
 
 
 
-    if params[:tag]
-    @locations = Location.all.tagged_with(params[:tag]).order("created_at DESC").paginate(:page => params[:page], :per_page => 4)
-  else
-    @locations = Location.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 4)
-  end
+       if params[:tag]
+        @locations = Location.all.tagged_with(params[:tag]).order("created_at DESC").paginate(:page => params[:page], :per_page => 4)
+      else
+        @locations = Location.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 4)
+       end
 
 
 
@@ -92,6 +92,8 @@ class LocationsController < ApplicationController
 
   def upvote
       # @location = Location.friendly.find(params[:id])
+    @location = Location.friendly.find( params[:id])
+    @location.liked_by current_user
     current_user.upvotes @location
     respond_to do |format|
     format.html {redirect_to :back }

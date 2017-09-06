@@ -10,6 +10,10 @@
     margin-bottom:2em;
   }
 
+  &-show--edit {
+    margin-top: 2em;
+  }
+
   &-show--followers {
     width: 15%;
   display: inline-block;
@@ -236,7 +240,11 @@ padding: 1.2em 0;
   padding-top: 1em;
   h2 {
     padding-top: 1em;
-    border-top: 1px solid ;
+  }
+
+  .user--locations {
+    border-bottom: 1px solid #eee;
+
   }
 }
 

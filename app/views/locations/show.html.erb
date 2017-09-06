@@ -35,6 +35,11 @@
     </button>
     <% end %>
 
+    <% @location.votes_for.voters.each do |p| %>
+
+      <p>        <%= p.name %> liked this</p>
+    <% end %>
+
 </div>
 <div class="location-content--post--owner col-md-6">
   <% if  @location.user == current_user %>

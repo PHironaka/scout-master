@@ -76,12 +76,14 @@
 <p><%= @user.hometown %></p>
 <% end %>
 
+<p><%= @user.follow_count %> Following</p>
+
+
 <p><%= @user.followers_count %> Followers</p>
 <!-- <p><%= @user.all_following.pluck(:name).to_sentence %></p> -->
 
 <% @user.followers.each do |p| %>
 <div class="user-show--followers">
-
   <p><%=   p.name  %></p>
   <%= image_tag p.avatar.url %>
 </div>
@@ -89,11 +91,16 @@
 <% end %>
 
 
+
+
 <% if current_user == @user %>
-<%= link_to 'Edit Profile', edit_user_path(@user) %>
-<%= link_to "delete", @user, method: :delete,
-                                  data: { confirm: "You sure?" } %>
-<% end %>
+<div class="user-show--edit">
+  <%= link_to 'Edit Profile', edit_user_path(@user) %>
+  <%= link_to "delete", @user, method: :delete,
+                                    data: { confirm: "You sure?" } %>
+  <% end %>
+</div>
+
 </div>
 
 <div class="col-sm-8 user-locations--index">
@@ -105,6 +112,14 @@
 <%= image_tag p.image.url(:large) %>
 <h2><%= link_to p.title, location_path(p) %> </h2>
   <p> <%= markdown p.body %></p>
+
+  <%= link_to like_location_path(p), class: "like-btn", method: :put, remote: :true do  %>
+
+    <button type="button" class="button button-info" aria-label="Left Align" name="button">
+      <span class="glyphicon glyphicon glyphicon-heart " aria-hidden="true"></span>
+      <span class="badge"><%= p.get_upvotes.size %> likes</span>
+    </button>
+    <% end %>
 
 
 

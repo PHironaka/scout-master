@@ -100,6 +100,6 @@ end
 
   private
   def user_params
-    params.require(:user).permit(:name, :email, :email_confirmed,  :summary, :portfolio, :hometown,:socialtwo, :instagram,  :password, :avatar, :slug)
+    params.require(:user).permit(:name, :email, :email_confirmed, :voter_id, :summary, :portfolio, :hometown,:socialtwo, :instagram,  :password, :avatar, :slug)
   end
 end
