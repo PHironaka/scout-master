@@ -85,14 +85,18 @@ p {
 }
 
 input {
-  outline: none;
-  border: none;
-  line-height: 2;
-      width: 16em;
-    background: #03a9f4;
-    color: white;
+     outline: none;
+    border-bottom: 1px solid;
+    line-height: 2;
+    width: 16em;
+    color: black;
     border-radius: 0;
     padding: 3px 15px;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    background-color: transparent;
+
     @media(max-width:992px){
       width: 10em;
     }
@@ -114,8 +118,7 @@ input[type="submit"] {
   padding:0 0 1px 0;
   margin-left: 14px;
   width: 6em;
-  background: #03a9f4;
-  color: white;
+  color: black;
   border-radius: 0;
   padding: 3px 7px;
 }
@@ -125,21 +128,21 @@ input[type="submit"] {
 }
 
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-    color:    #fff;
+    color:    #000;
 }
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-   color:    #fff;
+  color:    #000;
    opacity:  1;
 }
 ::-moz-placeholder { /* Mozilla Firefox 19+ */
-   color:    #fff;
+  color:    #000;
    opacity:  1;
 }
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
-   color:    #fff;
+   color:    #000;
 }
 ::-ms-input-placeholder { /* Microsoft Edge */
-   color:    #fff;
+   color:    #000;
 }
 
 svg {

@@ -2,89 +2,77 @@
 <% provide(:title, 'Edit Profile') %>
 
 <div class="container">
+        <%= form_for @user, :html => {class: 'new_user form-horizontal form-horizontal ', multipart: true } do |f| %>
+        <div class="col-sm-3 user">
 
-
-
-<%= form_for @user, :html => {class: 'new_user form-horizontal form-horizontal col-md-offset-2', multipart: true } do |f| %>
-<div class="col-sm-5 user ">
-  <%= image_tag @user.avatar.url %>
-          <%= f.file_field :avatar, class: 'form-control' %>
-
-</div>
-
-<h1><%= @user.name %>, Edit your account</h1>
-
-    <fieldset>
-        <div class="form-group">
-            <%= f.label :name, 'Name*', class: 'col-md-2 control-label' %>
-            <div class="col-md-8">
-              <!-- <span class="input-group-addon">@</span> -->
-                <%= f.text_field :name, class: 'form-control' %>
-            </div>
+            <%= image_tag @user.avatar.url %><%= f.file_field :avatar, class: 'form-control' %>
         </div>
-        <div class="form-group">
-            <%= f.label :email, 'Email*', class: 'col-md-2 control-label' %>
-            <div class="col-md-8">
-                <%= f.text_field :email, class: 'form-control' %>
+        <div class="col-sm-9 user">
+          <h2><%= @user.name %>, Edit your account</h2>
+
+        <fieldset>
+
+            <div class="form-group">
+                <%= f.label :name, 'Name*', class: 'col-md-2 control-label' %>
+                <div class="col-md-8">
+                    <!-- <span class="input-group-addon">@</span> -->
+                    <%= f.text_field :name, class: 'form-control' %>
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <%= f.label :password, 'Password*', class: 'col-md-2 control-label' %>
-            <div class="col-md-8">
-                <%= f.password_field :password, class: 'form-control' %>
+            <div class="form-group">
+                <%= f.label :email, 'Email*', class: 'col-md-2 control-label' %>
+                <div class="col-md-8">
+                    <%= f.text_field :email, class: 'form-control' %>
+                </div>
             </div>
-        </div>
-        <!-- <div class="form-group">
+            <div class="form-group">
+                <%= f.label :password, 'Password*', class: 'col-md-2 control-label' %>
+                <div class="col-md-8">
+                    <%= f.password_field :password, class: 'form-control' %>
+                </div>
+            </div><!-- <div class="form-group">
             <%= f.label :password_confirmation, 'Confirm Password*', class: 'col-md-4 control-label' %>
             <div class="col-md-5">
                 <%= f.password_field :password_confirmation, class: 'form-control' %>
             </div>
         </div> -->
-
-        <div class="form-group">
-            <%= f.label :summary, 'Summary', class: 'col-md-2 control-label' %>
-            <div class="col-md-8">
-                <%= f.text_area :summary, class: 'form-control' %>
+            <div class="form-group">
+                <%= f.label :summary, 'Summary', class: 'col-md-2 control-label' %>
+                <div class="col-md-8">
+                    <%= f.text_area :summary, class: 'form-control' %>
+                </div>
             </div>
-        </div>
-
-        <div class="form-group">
-            <%= f.label :hometown, 'Hometown', class: 'col-md-2 control-label' %>
-            <div class="col-md-8">
-                <%= f.text_field :hometown, class: 'form-control' %>
+            <div class="form-group">
+                <%= f.label :hometown, 'Hometown', class: 'col-md-2 control-label' %>
+                <div class="col-md-8">
+                    <%= f.text_field :hometown, class: 'form-control' %>
+                </div>
             </div>
-        </div>
-
-        <div class="form-group">
-            <%= f.label :portfolio, 'Portfolio', class: 'col-md-2 control-label' %>
-            <div class="col-md-8">
-                <%= f.text_field :portfolio, class: 'form-control' %>
+            <div class="form-group">
+                <%= f.label :portfolio, 'Portfolio', class: 'col-md-2 control-label' %>
+                <div class="col-md-8">
+                    <%= f.text_field :portfolio, class: 'form-control' %>
+                </div>
             </div>
-        </div>
-
-        <div class="form-group">
-            <%= f.label :instagram, 'Instagram', class: 'col-md-2 control-label' %>
-            <div class="col-md-8">
-                <%= f.text_field :instagram, class: 'form-control' %>
+            <div class="form-group">
+                <%= f.label :instagram, 'Instagram', class: 'col-md-2 control-label' %>
+                <div class="col-md-8">
+                    <%= f.text_field :instagram, class: 'form-control' %>
+                </div>
             </div>
-        </div>
-
-        <div class="form-group">
-            <%= f.label :socialtwo, 'Twitter', class: 'col-md-2 control-label' %>
-            <div class="col-md-8">
-                <%= f.text_field :socialtwo, class: 'form-control' %>
+            <div class="form-group">
+                <%= f.label :socialtwo, 'Twitter', class: 'col-md-2 control-label' %>
+                <div class="col-md-8">
+                    <%= f.text_field :socialtwo, class: 'form-control' %>
+                </div>
             </div>
-        </div>
-
-
-
-
-
-        <div class="form-group">
-            <div class="col-md-8 col-md-offset-2">
-                <%= f.submit 'Update Account', class: 'btn btn-success' %>
+            <div class="form-group">
+                <div class="col-md-8 col-md-offset-2">
+                    <%= f.submit 'Update Account', class: 'btn btn-success' %>
+                </div>
             </div>
-        </div>
-    </fieldset>
-<% end %>
-</div>
+        </fieldset>
+                </div>
+<%end %>
+    </div>
+</body>
