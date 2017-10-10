@@ -41,12 +41,13 @@
     <% end %>
 
 </div>
-<div class="location-content--post--owner col-md-6">
   <% if  @location.user == current_user %>
+
+<div class="location-content--post--owner col-md-6">
     <%= link_to 'Edit', edit_location_path(@location) %>
     <%= link_to 'Delete', location_path(@location), method: :delete %>
-  <% end %>
 </div>
+  <% end %>
 
 
 
