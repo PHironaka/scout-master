@@ -1,5 +1,5 @@
 <% provide(:title, @location.title) %>
-<div class="location-content row">
+<div class="location-content">
 <div class="container">
 
 
@@ -8,7 +8,7 @@
 
 <div class="map-image ">
   <h2>Location</h2>
-<%= image_tag "https://maps.googleapis.com/maps/api/staticmap?size=992x992&key=AIzaSyCxJInoQGs969DcTm5qw6tE9Blds8iYbiU&zoom=15&markers=#{@location.latitude}%2C#{@location.longitude}" %>
+<%= image_tag "https://maps.googleapis.com/maps/api/staticmap?size=1700x1700&key=AIzaSyCxJInoQGs969DcTm5qw6tE9Blds8iYbiU&zoom=15&markers=#{@location.latitude}%2C#{@location.longitude}" %>
 </div>
 
 </div>

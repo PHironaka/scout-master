@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-static-top">
+<nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header col-sm-3">
@@ -53,7 +53,7 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse  " id="bs-example-navbar-collapse-1">
-      <div class="location-index search <% if logged_in? %>col-sm-7<% else %>col-sm-5<% end %>  ">
+      <div class="location-index search <% if logged_in? %>col-sm-7<% else %>col-sm-6<% end %>  ">
 
 
         <%= form_tag locations_path, method: :get do %>
@@ -73,11 +73,10 @@
               <li class="dropdown">
 
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">              <%= image_tag current_user.avatar.url(:thumb) %>
-            <h3><%= current_user.name %> &#8964;</h3>
+            <h3><%= current_user.name %> <span>&#8964;</span></h3>
 
 </a>
           <ul class="dropdown-menu">
-            <h3><%= current_user.name %> </h3>
 
 <li><%= link_to 'View Profile', user_path(current_user) %></li>
             <li><%= link_to 'Edit Profile', edit_user_path(current_user) %></li>

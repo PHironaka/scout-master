@@ -3,7 +3,7 @@
 
 
 
-<div  class="location-content--index ">
+<div  class="location-content--index-map ">
   <div class="map-container"  id="multi_markers" ></div>
 </div>
 
@@ -12,130 +12,146 @@
 handler = Gmaps.build('Google');
 handler.buildMap(
 
-  { provider:  { scrollwheel: false, zoom: 14,  styles: [
-    {
-        "featureType": "all",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "color": "#2db0e9"
-            },
-            {
-                "lightness": "64"
-            }
-        ]
-    },
-    {
-        "featureType": "all",
-        "elementType": "labels.text.fill",
-        "stylers": [
-            {
-                "gamma": 0.01
-            },
-            {
-                "lightness": 20
-            },
-            {
-                "color": "#00548f"
-            }
-        ]
-    },
-    {
-        "featureType": "all",
-        "elementType": "labels.text.stroke",
-        "stylers": [
-            {
-                "saturation": -31
-            },
-            {
-                "lightness": -33
-            },
-            {
-                "weight": 2
-            },
-            {
-                "gamma": 0.8
-            },
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "all",
-        "elementType": "labels.icon",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "landscape",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "lightness": 30
-            },
-            {
-                "saturation": 30
-            }
-        ]
-    },
-    {
-        "featureType": "poi",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "saturation": 20
-            }
-        ]
-    },
-    {
-        "featureType": "poi.park",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "lightness": 20
-            },
-            {
-                "saturation": -20
-            }
-        ]
-    },
-    {
-        "featureType": "road",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "lightness": "71"
-            },
-            {
-                "saturation": -30
-            }
-        ]
-    },
-    {
-        "featureType": "road",
-        "elementType": "geometry.stroke",
-        "stylers": [
-            {
-                "saturation": 25
-            },
-            {
-                "lightness": 25
-            }
-        ]
-    },
-    {
-        "featureType": "water",
-        "elementType": "all",
-        "stylers": [
-            {
-                "lightness": -20
-            }
-        ]
-    }
+  { provider:  { scrollwheel: false, zoom: 17,  styles: [
+  {
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#2db0e9"
+      },
+      {
+        "lightness": "64"
+      }
+    ]
+  },
+  {
+    "elementType": "labels.icon",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#00548f"
+      },
+      {
+        "lightness": 20
+      },
+      {
+        "gamma": 0.01
+      }
+    ]
+  },
+  {
+    "elementType": "labels.text.stroke",
+    "stylers": [
+      {
+        "saturation": -31
+      },
+      {
+        "lightness": -33
+      },
+      {
+        "gamma": 0.8
+      },
+      {
+        "visibility": "off"
+      },
+      {
+        "weight": 2
+      }
+    ]
+  },
+  {
+    "featureType": "landscape",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "saturation": 30
+      },
+      {
+        "lightness": 30
+      }
+    ]
+  },
+  {
+    "featureType": "landscape",
+    "elementType": "geometry.fill",
+    "stylers": [
+      {
+        "color": "#ede9f3"
+      }
+    ]
+  },
+  {
+    "featureType": "poi",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "saturation": 20
+      }
+    ]
+  },
+  {
+    "featureType": "poi.park",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "saturation": -20
+      },
+      {
+        "lightness": 20
+      }
+    ]
+  },
+  {
+    "featureType": "road",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "saturation": -30
+      },
+      {
+        "lightness": "71"
+      }
+    ]
+  },
+  {
+    "featureType": "road",
+    "elementType": "geometry.stroke",
+    "stylers": [
+      {
+        "saturation": 25
+      },
+      {
+        "lightness": 25
+      }
+    ]
+  },
+  {
+    "featureType": "water",
+    "stylers": [
+      {
+        "lightness": -20
+      }
+    ]
+  },
+  {
+    "featureType": "water",
+    "elementType": "geometry.fill",
+    "stylers": [
+      {
+        "color": "#80c6fe"
+      },
+      {
+        "weight": 3.5
+      }
+    ]
+  }
 ]},
   internal: {id: 'multi_markers'}}, function(){
   markers = handler.addMarkers(<%=raw @hash.to_json %>);
@@ -156,17 +172,19 @@ handler.buildMap(
 <div class="location-content--index col-md-6">
 <h2><%= link_to p.title, location_path(p) %> </h2>
 
-<p class="location-content--index--scouted-by"> Scouted by <%= link_to p.user.name, user_path(p.user) %></p>
+
+
 <div class="location-content--index--img ">
   <%= image_tag p.user.avatar.url , class: "image-avatar  "%>
   <% if p.user.following?(p) %>
   <p><%= p.followers_count %> </p>
   <% end %>
 </div>
+<p class="location-content--index--scouted-by"> Scouted by <%= link_to p.user.name, user_path(p.user) %></p>
+<p class="location-content--index--scouted-by">Posted <%= time_ago_in_words(p.created_at) %> ago</p>
 <%= image_tag p.image.url(:large) %>
 <p> <%=   p.body %></p>
 
-<p>Posted <%= time_ago_in_words(p.created_at) %> ago</p>
 
 <div class="tag-list">
   <%= raw p.tag_list.map { |t| link_to t , tag_path(t) }.join(' ') %>

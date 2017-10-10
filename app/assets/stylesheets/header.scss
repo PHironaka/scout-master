@@ -9,9 +9,11 @@
 
 
 .navbar {
-  padding: 1em 0 0;
+  padding: 1em 0;
   border-color: transparent !important;
   margin: 0;
+    width: 100%;
+
 
   .new-location {
     float: left;
@@ -25,6 +27,11 @@
 .navbar-collapse {
       float: left;
     width: 74.666667%;
+
+     @media(max-width:768px){
+       width: 100%;
+    }
+
 }
 
 
@@ -41,6 +48,7 @@
 
 .navbar-toggle {
   border-color: transparent !important;
+  padding: 9px 10px 0;
 
     &:hover {
       background-color: none !important;
@@ -52,14 +60,15 @@
     width: 28px;
     border-radius: 1px;
     margin: 0 0 9px;
+
   }
 }
 
 .navbar-right {
-      margin: 10px 0;
+      margin:  0;
       @media(max-width:992px){
         float: none;
-        margin: 15px 0;
+        margin:  0;
       }
   img {
     float: left;
@@ -117,6 +126,7 @@
 .dropdown-menu {
 float: left;
 background: #f8f8f8;
+padding: 0;
 
   h3 {
         padding: 1px 13px;
@@ -154,13 +164,17 @@ background: #f8f8f8;
 .dropdown {
       width: 150px;
        h3 {
-  margin: 10px 0;
+  margin: 0;
+  }
+  span {
+      font-size: 1.7em;
+    line-height: 1;
+    vertical-align: text-top;
   }
 }
 
 .dropdown.open a {
   background: transparent !important;
- 
 }
 
 .navbar-default .navbar-nav .open .dropdown-menu > li > a {
@@ -177,21 +191,16 @@ background: #f8f8f8;
   }
 
 
-  .divider {
-    background: white;
-    height: .5px;
-    width: 100%;
-  }
-
+ 
 
 }
 
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
   background-color: #03a9f4;
-color: #fff;
+color: #000;
 }
 
 .search {
-  margin:0 0 1em;
+  margin:0 0 ;
 }
 

@@ -1,4 +1,6 @@
 <% provide(:title, @user.name) %>
+<div >
+
 <div class="container">
 
 <div class="col-sm-4 user ">
@@ -22,8 +24,8 @@
 
 
             <% if current_user == @user %>
-              <%= link_to 'Edit Profile', edit_user_path(@user) %>
-              <%= link_to "delete", @user, method: :delete,
+              <%= link_to 'Edit Profile', edit_user_path(@user) , class: "update-profile" %>
+              <%= link_to "Delete",  @user, method: :delete, class: "update-profile", 
               data: { confirm: "You sure?" } %>
               <% end %>
 <h3>Bio</h3>
@@ -83,10 +85,9 @@
 <p><%= @user.hometown %></p>
 <% end %>
 
-<p><%= @user.follow_count %> Following</p>
+<!-- <p>Following(<%= @user.follow_count %>) </p> -->
 
-
-<p><%= @user.followers_count %> Followers</p>
+<h3>Followers (<%= @user.followers_count %>) </h3>
 
 <% @user.followers.each do |p| %>
 <div class="user-show--followers">
@@ -105,7 +106,7 @@
 
 
 <div class="col-sm-8 user-locations--index">
-<h2><%= @user.name %>'s locations <%= pluralize(@user.locations.count, "") %> </h2>
+<!-- <h2><%= @user.name %>'s locations <%= pluralize(@user.locations.count, "") %> </h2> -->
 <% @user.locations.each do |p| %>
 <div class="user--locations ">
 <%= image_tag p.image.url(:large) %>
@@ -124,7 +125,7 @@
 
 <% if current_user == p.user %>
 
-<div class="location-content--post--users col-md-6">
+<div class="location-content--post--users ">
     <%= link_to 'Delete', p, method: :delete %>
 </div>
   <% end %>
@@ -137,6 +138,7 @@
 
 
 <% end %>
+</div>
 </div>
 </div>
 </div>

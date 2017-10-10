@@ -6,7 +6,7 @@
   padding:1em 0 1.5em 0;
   float: left;
 
-      h2 {
+      h3 {
         border-top: 1px solid #eee;
         padding: 20px 0;
 
@@ -51,14 +51,14 @@
 
 
 input.btn.btn-success {
-  margin: 1em 0;
-background-color: #2196F3;
-border: none;
+  margin: 2em 0;
+border: 1px solid;
 margin-left: 0;
 padding: 7px;
 text-align: center;
 width: 10em;
     &:hover {
-      background-color: #81dcb6;
+      background-color: #000;
+      color: white;
     }
 }

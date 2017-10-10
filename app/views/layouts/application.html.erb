@@ -2,21 +2,19 @@
 <html>
   <head>
 
+
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <%= display_meta_tags og: { title: 'Scout Master - Location Scouting made easier', description: 'Scoutmaster is an online tool for location scouting', image: 'https://www.scoutmaster.pro/assets/placeholder-e57dc2024973000dc4885262ffa69ae1c6750a525eda1ad2f86d5706f1ee7cae.jpg' } %>
-    <meta name="twitter:card" content="summary_large" />
+        <title> Scoutmaster | Location Scouting Made Easy <%=' | '  +  if content_for?(:title) then yield(:title) end %></title>
+    <%= display_meta_tags og: { title: 'Scout Master - Location Scouting made easy', description: 'Scout Master - Location Scouting made easy', image: 'https://www.scoutmaster.pro/assets/placeholder-e57dc2024973000dc4885262ffa69ae1c6750a525eda1ad2f86d5706f1ee7cae.jpg' } %>
+    <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@scoutmaster_app" />
     <meta name="twitter:title" content="Scoutmaster Pro" />
-    <meta name="twitter:description" content="Scoutmaster is an online tool for location scouting" />
-    <meta name="twitter:image" content="https://www.scoutmaster.pro/assets/placeholder-e57dc2024973000dc4885262ffa69ae1c6750a525eda1ad2f86d5706f1ee7cae.jpg">
+    <meta name="twitter:description" content="Scout Master - Location Scouting made easy" />
+    <meta name="twitter:image" value="https://www.scoutmaster.pro/assets/placeholder-e57dc2024973000dc4885262ffa69ae1c6750a525eda1ad2f86d5706f1ee7cae.jpg">
 
-    <title>
-
-      Scoutmaster
-  <%=' | '  +  if content_for?(:title) then yield(:title) end %>
-  </title>
     <%= csrf_meta_tags %>
     <link href="https://fonts.googleapis.com/css?family=Ek+Mukta:300|Open+Sans:800" rel="stylesheet">
     <%= display_meta_tags %>
@@ -73,6 +71,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <%= render 'partials/footer' %>
 
 <script src="https://cdn.jsdelivr.net/jquery/3.2.1/jquery.min.map" charset="utf-8"></script>
+
 
     </body>
   </html>

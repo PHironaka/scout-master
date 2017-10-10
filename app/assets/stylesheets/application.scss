@@ -34,6 +34,8 @@ body {
   overflow-x: hidden;
   font-family: 'Ek Mukta', sans-serif;
   font-weight: 300;
+  padding-top: 79px;
+  overflow-x:hidden;
 }
 
 ul, ol {
@@ -74,6 +76,12 @@ h3 {
 
 a {
   color: #333;
+        -webkit-transition: all 300ms ease-out;
+    -moz-transition: all 300ms ease-out;
+    -ms-transition: all 300ms ease-out;
+    -o-transition: all 300ms ease-out;
+    transition: all 300ms ease-out;
+
   &:hover {
     text-decoration: none;
 
@@ -103,11 +111,10 @@ input {
 }
 
 .form-control {
-  border: none;
+  border: 1px solid;
   outline: none;
   border-radius: 0;
   box-shadow: none;
-  background-color: #f7f7f7;
   height: 50px;
 }
 
@@ -145,9 +152,10 @@ input[type="submit"] {
    color:    #000;
 }
 
-svg {
-  position: absolute;
-  max-width: 12em;
+.navbar svg {
+      position: relative;
+        max-width: 10em;
+    height: 1.1em;
 }
 
 .pagination {
@@ -157,16 +165,21 @@ svg {
   text-align: center;
 
   a {
-    border: 2px solid #2196f3;
-  padding: 7px;
-  border-radius: 9px;
-  color: #2196F3;
+      border: 1px solid;
+    padding: 7px;
+    color: black;
 
   &:hover {
-    background-color: #2196f3;
+    background-color: #000;
     color: #fff;
   }
   }
+}
+
+.results {
+      width: 66% !important;
+          position: relative !important;
+    z-index: 0 !important;
 }
 
 
@@ -228,12 +241,21 @@ svg {
 }
 
 .follow-btn {
-  border: 2px solid #2196f3;
-  color: #2196f3;
+  border: 1px solid;
+
   &:hover, &:visited{
-    background-color: #2196f3;
+    background-color: #000;
     color: white;
   }
 
 
 }
+
+.unfollow {
+   background-color: #000;
+    color: white;
+}
+
+.btn {
+  border-radius: 0;
+ }

@@ -1,7 +1,7 @@
 
 
 <div class="comment col-md-6">
-  <h2><%= pluralize(@comments.count, "Comment") %></h2>
+  <h3><%= pluralize(@comments.count, "Comment") %></h3>
 
 
 <% @comments.each do |comment| %>
@@ -10,7 +10,7 @@
     <%= image_tag comment.user.avatar.url(:thumb) %>
   </div>
 <div class="comment comment-list--content  col-md-10">
-  <h3><%= link_to comment.user.name, user_path(comment.user)   %></h3>
+  <h4><%= link_to comment.user.name, user_path(comment.user)   %></h4>
   <p><%= comment.content %></p>
     <% if current_user == comment.user %>
       <%= link_to "Delete", [comment.location, comment] , method: :delete %>
