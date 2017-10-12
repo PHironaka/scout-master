@@ -4,11 +4,12 @@
 <div class="container">
         <%= form_for @user, :html => {class: 'new_user form-horizontal form-horizontal ', multipart: true } do |f| %>
         <div class="col-sm-3 user">
+                      <h2><%= @user.name %>, Edit your account</h2>
 
             <%= image_tag @user.avatar.url %><%= f.file_field :avatar, type:'file', class: 'custom-file-input' %>
+
         </div>
         <div class="col-sm-9 user">
-          <h2><%= @user.name %>, Edit your account</h2>
 
         <fieldset>
 

@@ -12,7 +12,7 @@
 handler = Gmaps.build('Google');
 handler.buildMap(
 
-  { provider:  { scrollwheel: false, zoom: 17,  styles: [
+  { provider:  { scrollwheel: false,  styles: [
   {
     "elementType": "geometry",
     "stylers": [
@@ -157,6 +157,7 @@ handler.buildMap(
   markers = handler.addMarkers(<%=raw @hash.to_json %>);
   handler.bounds.extendWith(markers);
   handler.fitMapToBounds();
+  handler.getMap().setZoom(4);
 
 });
 
@@ -209,4 +210,5 @@ handler.buildMap(
 </div>
 
 <% end %>
+</div>
 <%= will_paginate @locations, :page_links => false %>

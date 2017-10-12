@@ -34,7 +34,7 @@ body {
   overflow-x: hidden;
   font-family: 'Ek Mukta', sans-serif;
   font-weight: 300;
-  padding-top: 79px;
+  padding-top: 89px;
   overflow-x:hidden;
 }
 
@@ -74,7 +74,7 @@ h3 {
   font-size:1.2em;
 }
 
-a {
+a,input {
   color: #333;
         -webkit-transition: all 300ms ease-out;
     -moz-transition: all 300ms ease-out;
@@ -166,7 +166,7 @@ input[type="submit"] {
 
   a {
       border: 1px solid;
-    padding: 7px;
+    padding: 7px 10px;
     color: black;
 
   &:hover {
@@ -258,4 +258,8 @@ input[type="submit"] {
 
 .btn {
   border-radius: 0;
+ }
+
+ .next_page, .previous_page {
+  margin: 0 1em;
  }

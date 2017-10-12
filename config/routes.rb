@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'static_pages#about'
+  root 'static_pages#home'
   get 'errors/not_found'
   get 'errors/internal_server_error'
   get 'password_resets/new'
@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get '/help' => 'static_pages#help'
   get '/about' => 'static_pages#about'
   get    '/login' => 'sessions#new'
+  get    '/contact' => 'static_pages#contact'
   get    '/terms' => 'static_pages#terms'
   get '/locations' => 'locations#index'
 

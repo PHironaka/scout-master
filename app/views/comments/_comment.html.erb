@@ -14,7 +14,6 @@
   <p><%= comment.content %></p>
     <% if current_user == comment.user %>
       <%= link_to "Delete", [comment.location, comment] , method: :delete %>
-      <%= link_to "Edit", edit_location_comment_path(comment.location, comment ) %>
       <% end %>
 </div>
 
