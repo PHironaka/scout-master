@@ -245,6 +245,12 @@ height: 100%;
 border: 1px solid #eee;
 border-radius: 11px;
 padding: 1.2em 0;
+@media(max-width:992px){
+
+    border-radius: 0;
+    
+  }
+
     &--image {
       img {
         float: left;
@@ -254,6 +260,9 @@ padding: 1.2em 0;
 
   @media(max-width:992px){
     float: none;
+    max-width: 100%;
+    border-radius: 0;
+
   }
 
 

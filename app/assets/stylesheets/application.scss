@@ -237,8 +237,12 @@ input[type="submit"] {
 
 .btn-primary {
     color: #fff;
-    background-color: #2196f3;
-    border: none;
+    background-color: #000;
+    padding: 7px 13px;
+        
+    &:hover {
+    background-color: #999;
+    }
 }
 
 .like-btn {

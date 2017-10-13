@@ -83,13 +83,26 @@
   }
 
   li.login {
-    margin-right: 13px;
+     margin: 13px 0 0 16px;
+    border: 1px solid;
+          padding:0 ;
+
+
 
     @media(max-width:768px){
       margin: 8px 16px;
       float: left;
     }
+a{
+  padding: 5px 12px;
+}
 
+
+
+      a:hover {
+    color:white !important;
+    background:black;
+    }
 
   }
   li {
@@ -108,10 +121,7 @@
       }
     }
 
-    .login {
-      color: black !important;
 
-    }
   }
 }
 
