@@ -82,18 +82,11 @@
       <li>
         <a href="/about">About</a>
       </li>
-       <li>
-        <a href="/contact">Contact</a>
-      </li>
-
+  
        <li>
         <a href="/locations">Locations</a>
       </li>
- 
-      <li>
-        <a href="/help">Help</a>
-      </li>
-        <% if logged_in? %>
+         <% if logged_in? %>
 
                 <li><a href="#"><%= link_to 'Logout', logout_path, method: 'delete' %></a></li>
     

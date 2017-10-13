@@ -106,7 +106,14 @@ input {
     background-color: transparent;
 
     @media(max-width:992px){
-      width: 10em;
+      width: 14em;
+    }
+}
+
+.search input {
+   @media(max-width:992px){
+      width: 9em;
+          margin-left: 3em;
     }
 }
 
@@ -153,9 +160,9 @@ input[type="submit"] {
 }
 
 .navbar svg {
-      position: relative;
-        max-width: 10em;
-    height: 1.1em;
+    position: relative;
+    max-width: 14em;
+    height: 1.8em;
 }
 
 .pagination {

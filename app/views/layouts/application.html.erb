@@ -13,8 +13,7 @@
     <meta name="twitter:site" content="@scoutmaster_app" />
     <meta name="twitter:title" content="Scoutmaster Pro" />
     <meta name="twitter:description" content="Scout Master - Location Scouting made easy" />
-    <meta name="twitter:image" value="https://www.scoutmaster.pro/assets/placeholder-e57dc2024973000dc4885262ffa69ae1c6750a525eda1ad2f86d5706f1ee7cae.jpg">
-
+    <meta name="twitter:image" value="https://www.scoutmaster.pro/assets/flag-placeholder-04a3f28739f8b2a6377e7033e8d28855f36540810ac5c5b8a5666029479c79e4.svg">
     <%= csrf_meta_tags %>
     <link href="https://fonts.googleapis.com/css?family=Ek+Mukta:300|Open+Sans:800" rel="stylesheet">
     <%= display_meta_tags %>
@@ -58,9 +57,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-       <% unless action_name == "home" %>
       <%= render 'partials/navbar' %>
-      <% end %>
 
         <% flash.each do |message_type, message| %>
         <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>

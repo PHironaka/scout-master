@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="322px" height="51px" viewBox="0 0 322 51" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="About" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop" transform="translate(0.000000, -12.000000)">
+            <g id="Group" transform="translate(0.000000, 12.000000)">
+                <text id="Scout-master" font-family="Phosphate-Solid, Phosphate" font-size="40" font-weight="normal" fill="#000000">
+                    <tspan x="0" y="43.6050612">Scout master</tspan>
+                </text>
+                <g id="flag" transform="translate(274.000000, 0.000000)" fill-rule="nonzero">
+                    <path d="M2.11677182,3.83910289 C6.919405,7.68903049 11.134488,7.06253688 15.4921318,6.01212911 C23.8972631,4.20606942 31.1663888,2.82957275 39.1931289,7.41498893 C42.0610886,8.77590813 43.3297001,12.5820724 47.0141445,11.8987842 C47.2593215,11.8999916 47.5091201,11.89481 47.7639237,11.8826827 C47.5661517,12.0088747 47.3702836,12.1304357 47.1762501,12.2475817 C44.4589546,15.1666179 41.6234353,13.7904495 39.5494209,13.430693 C30.2147867,11.8245218 25.1826287,17.9715611 16.5016062,23.4630778 C13.1195366,25.8847954 8.85916048,27.1767095 2.04441544,24.613512 L2.11677182,3.83910289 Z" fill="#EA3E3E"></path>
+                    <polygon id="pole" fill="#543C24" points="2.97594668 49.8125612 2.00657607 0.277926466 0.261688582 0.185427248 0.35862618 50.0477564"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

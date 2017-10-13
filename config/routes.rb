@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'static_pages#home'
+  root 'locations#index'
   get 'errors/not_found'
   get 'errors/internal_server_error'
   get 'password_resets/new'

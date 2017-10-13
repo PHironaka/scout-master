@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200px" height="800px" viewBox="0 0 1200 800" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="background: #FFFFFF;">
+    <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
+    <title>Artboard</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Placeholder-Image" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle" stroke="#F2F2F2" stroke-width="11" x="0" y="0" width="1200" height="800"></rect>
+        <g id="Artboard">
+            <g id="Group" transform="translate(217.000000, 12.000000)">
+                <rect id="Rectangle-2" fill="#FFFFFF" x="0" y="0" width="760.174192" height="760.174192"></rect>
+                <g id="flag" transform="translate(166.774726, 131.425008)" fill-rule="nonzero">
+                    <path d="M20.1757875,36.6756046 C71.6088741,74.9522965 116.749679,68.7235812 163.417218,58.280233 C253.430723,40.3240537 331.278346,26.6386694 417.239527,72.2277246 C447.953515,85.7582349 461.539522,123.599824 500.997532,116.806447 C503.623218,116.81845 506.298399,116.766934 509.027181,116.646362 C506.90917,117.900986 504.811551,119.109568 502.733577,120.274256 C473.633105,149.295852 443.266532,135.613733 421.055183,132.036966 C321.087304,116.068116 267.196156,177.183117 174.228034,231.780791 C138.008263,255.857954 92.3823974,268.702404 19.4008975,243.21862 L20.1757875,36.6756046 Z" fill="#EA3E3E"></path>
+                    <polygon id="pole" fill="#543C24" points="29.376993 493.752225 18.9956624 1.26973031 0.309049003 0.35008598 1.34718781 496.09058"></polygon>
+                </g>
+                <text id="sm" font-family="Phosphate-Solid, Phosphate" font-size="52" font-weight="normal" fill="#FFFFFF">
+                    <tspan x="267.330413" y="287.070612">sm</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>
